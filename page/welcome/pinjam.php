@@ -209,17 +209,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
-            				<center><h5 style='color:#333;'>7FAECFC9</h5></center>
-            			</td>
-            			<td>
-            				<center><h5 style='color:#333;'>Lenovo</h5></center>
-            			</td>
-            			<td>
-            				<center><button type="submit" class="btn" style='background:#62C2E4;color:white;'>Pinjam</button> <a href='#detail' class="btn" style='background:#63CA82;color:white;'>Lihat Detail</a></center>
-            			</td>
-            		</tr>
+            		 
+                    <?php list_pinjam(1); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -241,17 +233,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(2); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -273,17 +257,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(3); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -305,17 +281,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(4); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -337,17 +305,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(5); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -369,17 +329,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(6); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -401,17 +353,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(7); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -433,17 +377,9 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(8); ?>                     
+
             	</table>
 	  		</form>
         	</div>
@@ -465,21 +401,14 @@ if($_SESSION['TIPE']!="user"){
             			<td width='30%'>
             			</td>
             		</tr>
-            		 <tr>
-            			<td>
- 
-            			</td>
-            			<td>
 
-            			</td>
-            			<td>
-            				
-            			</td>
-            		</tr>
+                    <?php list_pinjam(9); ?>                     
+
             	</table>
 	  		</form>
         	</div>
         <!-- Akhir Pop Up 9 -->
+
 
 		<a href="#x" class="overlay" id="detail"></a>
 	        <div class="popup">
@@ -527,19 +456,24 @@ if($_SESSION['TIPE']!="user"){
 	  		</form>
         	</div>
 <!-- Keterangann -->
-
+       
 <?php 
 if(!empty($_GET['pinjam']))
 {
        if($_GET['pinjam'] == 'sukses')
         {
-        	alert("Barang Berhasil di Pinjam!");
+            echo "<script language=\"Javascript\">\n";
+            echo "confirmed = window.alert('Barang Berhasil di pinjam! Jaga baik baik yah ;)');";
+            echo "</script>";
         }
         else
         {
-        	alert("Barang yang anda minta Sedang di pinjam.");
+            echo "<script language=\"Javascript\">\n";
+            echo "window.alert('Maaf Anda gagal!');";
+            echo "</script>";
         }
 }
+?>      
 ?>   
 
 </body>

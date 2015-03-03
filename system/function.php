@@ -1,6 +1,8 @@
 <?php
 include('connect.php');
+
 // Fungsi Tampil User
+
 function tampilnama() {
 	$username = $_SESSION['USERNAME'];
 	$nama=mysql_query("select * from user where USERNAME='$username'") or die(mysql_error());
@@ -70,6 +72,25 @@ function foto() {
 	echo $tfoto['FOTO'];
 }
 
+//Fungis Tampil User >> Pinjam
+function list_pinjam($number){
+	$barang = mysql_query("SELECT *FROM barang WHERE JENIS_BARANG_ID = '".$number."' AND jumlah =1 ");
+	while($row=mysql_fetch_row($barang)){
+	echo "
+	<tr>
+    	<td>
+    	<center><h5 style='color:#333;'>$row[2]</h5></center>
+    	</td>
+        <td>
+        <center><h5 style='color:#333;'>$row[3]</h5></center>
+        </td>
+        <td>
+        <center><a href='../../system/system_pinjam.php?id=$row[0]'><button type='button' class='btn' style='background:#62C2E4;color:white;'>Pinjam</button></a> <a href='#detail' class='btn' style='background:#63CA82;color:white;'>Lihat Detail</a></center>
+        </td>
+    </tr>
+	";
+	}
+}
 // Fungsi Tampilan Admin 
 
 function list_user(){
@@ -147,16 +168,16 @@ while($row=mysql_fetch_row($tampil))
     		$row[0]
     		</td>
         	<td>
-          	$row[3]
-        	</td>
-        	<td>
-          	$row[4]
-        	</td>
-        	<td>
-          	$row[8]
+          	$row[2]
         	</td>
         	<td>
           	$row[5]
+        	</td>
+        	<td>
+          	$row[9]
+        	</td>
+        	<td>
+          	$row[6]
         	</td>
       		</tr>";
      }

@@ -151,10 +151,10 @@ if($_SESSION['TIPE']!="user"){
 			    <strong>Success</strong>
 			</div>
 			-->
-			<form method='POST'>
+			<form method='POST' action="../../system/kembali.php">
 				<div class="input-group">
 				  <span class="input-group-addon glyphicon glyphicon-hand-right" id="basic-addon1"></span>
-				  <input type="text" class="form-control" placeholder="ID Peminjaman" aria-describedby="basic-addon1">
+				  <input name="id_peminjam" type="text" class="form-control" placeholder="ID Peminjaman" aria-describedby="basic-addon1" required>
 				</div>
 				<br>
 				 <center><button type="submit" class="btn btn-success">Kembalikan</button></center>
