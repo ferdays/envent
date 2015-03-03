@@ -121,7 +121,7 @@ function jumlah_peminjaman(){
 	echo $total;
 }
 function jumlah($number) {
-	$sql = mysql_query("SELECT SUM(JUMLAH) AS total_barang FROM barang WHERE JENIS_BARANG_ID = '".$number."' ");
+	$sql = mysql_query("SELECT SUM(jumlah) AS total_barang FROM barang WHERE JENIS_BARANG_ID = '".$number."' ");
 	$hasil = mysql_fetch_array($sql);
 	$output = number_format($hasil['total_barang']);
 	echo $output;

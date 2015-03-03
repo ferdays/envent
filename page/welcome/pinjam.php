@@ -526,7 +526,7 @@ if($_SESSION['TIPE']!="user"){
             <center><button type="submit" class="btn" style='background:#62C2E4;color:white;'>Pinjam</button> <a href='#x' class="btn" style='background:#63CA82;color:white;'>Kembali</a></center>
 	  		</form>
         	</div>
-<!-- Keterangan -->
+<!-- Keterangann -->
 
 <?php 
 if(!empty($_GET['pinjam']))
