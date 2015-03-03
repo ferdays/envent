@@ -1,6 +1,6 @@
 <?php
 include('connect.php');
-// Fungsi Tampil
+// Fungsi Tampil User
 function tampilnama() {
 	$username = $_SESSION['USERNAME'];
 	$nama=mysql_query("select * from user where USERNAME='$username'") or die(mysql_error());
@@ -69,6 +69,9 @@ function foto() {
 	$tfoto=mysql_fetch_array($foto);
 	echo $tfoto['FOTO'];
 }
+
+// Fungsi Tampilan Admin 
+
 function list_user(){
 
 $tampil = mysql_query("SELECT * FROM user WHERE tipe = 'user'");
@@ -90,18 +93,116 @@ $tampil = mysql_query("SELECT * FROM user WHERE tipe = 'user'");
       </tr>";
     }
 }
-function user(){
-
+function jumlah_user(){
 	$user = mysql_query("SELECT * FROM user where TIPE='user'");
 	$total = mysql_num_rows($user);
-
 	$output =  $total;
 	echo $output;
-
 }
-function komen(){
+function jumlah_komen(){
 	$kritik = mysql_query("SELECT * FROM kritik_dan_saran");
 	$saran = mysql_num_rows($kritik);
 	echo $saran;
 }
+function jumlah_barang(){
+	$total = mysql_query("SELECT SUM(JUMLAH) AS total_item FROM barang");
+	$hasil = mysql_fetch_array($total);
+	$output = number_format($hasil['total_item']);
+	echo $output;
+}
+function jumlah_admin(){
+	$admin = mysql_query("SELECT * FROM user WHERE tipe='admin'");
+	$total = mysql_num_rows($admin);
+	echo $total;
+}
+function jumlah_peminjaman(){
+	$peminjam = mysql_query("SELECT * FROM peminjam");
+  	$total = mysql_num_rows($peminjam);
+	echo $total;
+}
+function jumlah($number) {
+	$sql = mysql_query("SELECT SUM(JUMLAH) AS total_barang FROM barang WHERE JENIS_BARANG_ID = '".$number."' ");
+	$hasil = mysql_fetch_array($sql);
+	$output = number_format($hasil['total_barang']);
+	echo $output;
+}
+function nama_brg($number) {
+    $sql = mysql_query("SELECT JENIS_BARANG FROM jenis_barang WHERE JENIS_BARANG_ID='".$number."' ");
+    $tampil = mysql_fetch_array($sql);
+    echo $tampil['JENIS_BARANG'];
+}
+function item(){
+	$total = mysql_query("SELECT SUM(JUMLAH) AS total_item FROM barang");
+	$hasil = mysql_fetch_array($total);
+	$output = number_format($hasil['total_item']);
+	echo $output;
+}
+function list_user_lengkap(){
+$tampil = mysql_query("SELECT * FROM user");
+$data = mysql_fetch_array($tampil);
+while($row=mysql_fetch_row($tampil))
+{
+	echo "	<tr>
+    		<td>
+    		$row[0]
+    		</td>
+        	<td>
+          	$row[3]
+        	</td>
+        	<td>
+          	$row[4]
+        	</td>
+        	<td>
+          	$row[8]
+        	</td>
+        	<td>
+          	$row[5]
+        	</td>
+      		</tr>";
+     }
+}
+function list_barang()
+{
+$tampil = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID ");
+while($row=mysql_fetch_row($tampil))
+{
+	echo " 
+			<tr>
+    	    <td>
+			$row[11]        
+        	</td>
+        	<td>
+        	$row[3]
+        	</td>
+        	<td>
+        	$row[0]
+        	</td>
+        	<td>
+          			<span class='glyphicon glyphicon-edit' style='color:grey;'></span>
+          			&nbsp; &nbsp;
+          			<a href='../../system/deletebrg.php?id=$row[0]'> <span class='glyphicon glyphicon-remove' style='color:red;'></span></a>
+        	</td>
+      		</tr>
+      	 ";
+}
+
+}
+function info_user(){
+$tampil = mysql_query("SELECT * FROM user");
+$data = mysql_fetch_array($tampil);
+while($row=mysql_fetch_row($tampil))
+{
+	echo "<div class='col-md-4' style='margin-top:20px;'>
+      	<div class='profilbig'>
+        <center><br><img src='../profil/img/$row[10]' style='border-radius:50%;' height='100' width='100'>
+        <br><br><h3 style='margin:0;color:white;'>$row[4]</h3>
+        <h4>$row[5]</h4>
+        <h4>$row[6]</h4>
+        <br>
+        </center>
+      </div>
+    </div>";
+ }   
+}
+
 ?>

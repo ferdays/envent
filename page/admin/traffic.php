@@ -101,19 +101,19 @@ if($_SESSION['TIPE']!="admin"){
     </ol>
     <div class='col-md-4'>
       <div class='komen'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php komen(); ?> </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_komen(); ?> </h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> New Comment </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='riwayat'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>2545 </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_peminjaman(); ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Peminjaman Barang </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='barang'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>60 </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_barang(); ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Item </h3>
       </div>
     </div>

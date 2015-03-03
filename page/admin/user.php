@@ -101,40 +101,41 @@ if($_SESSION['TIPE']!="admin"){
     </ol>
     <div class='col-md-4'>
       <div class='user'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php user(); ?> </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_user(); ?> </h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> User </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='riwayat'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>2545 </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_peminjaman(); ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Peminjaman Barang </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='admin'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>1 </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_admin(); ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Admin </h3>
       </div>
     </div>
   <hr style='width:500px;border:1px solid #d4d4d4;margin-top:200px;'>
   <h2 class='text-center' style='color:grey;'> User Panel </h2>
   <hr style='width:50px;border:1px solid #d4d4d4;'>
+<form method="post" action="../../system/tambahUser.php">
     <div class='col-md-5'>
   <div class="panel panel-default" style='border:none;'>
   <div class="panel-heading" style='background:#FFB848;'>
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-plus'></i> Tambah User</h2>
   </div>
   <div class="panel-body" style='background:white;border:1px solid #FFB848;border-top:none;'>
-    <table>
-      <form action='../../system/tambahuser.php' method='post'>
+      <table>
+    
       <tr>
         <td width='100'>
           Nama
         </td>
         <td>
           <div class="input-group">
-          <input name='nama' type="text" class="form-control" required placeholder="Nama..." style='border:none;box-shadow:none;'>
+          <input type="text" name="name" class="form-control" placeholder="Nama..." style='border:none;box-shadow:none;'required>
         </div>
         </td>
       </tr>
@@ -144,7 +145,7 @@ if($_SESSION['TIPE']!="admin"){
         </td>
         <td>
           <div class="input-group">
-          <input name='kelas' type="text" class="form-control" required placeholder="Kelas..." style='border:none;box-shadow:none;'>
+          <input type="text" name="kelas" class="form-control" placeholder="Kelas..." style='border:none;box-shadow:none;'required>
         </div>
         </td>
       </tr>
@@ -154,7 +155,7 @@ if($_SESSION['TIPE']!="admin"){
         </td>
         <td>
           <div class="input-group">
-          <input name='username' type="text" class="form-control" required placeholder="Username..." style='border:none;box-shadow:none;'>
+          <input type="text" name="username" class="form-control" placeholder="Username..." style='border:none;box-shadow:none;'required>
         </div>
         </td>
       </tr>
@@ -164,7 +165,7 @@ if($_SESSION['TIPE']!="admin"){
         </td>
         <td>
           <div class="input-group">
-          <input name='password' type="password" class="form-control" required placeholder="Password..." style='border:none;box-shadow:none;'>
+          <input type="password" name="password" class="form-control" placeholder="Password..." style='border:none;box-shadow:none;'required>
         </div>
         </td>
       </tr>
@@ -172,24 +173,29 @@ if($_SESSION['TIPE']!="admin"){
         <td>
           Jenis Kelamin
         </td>
+
+
         <td>
            <div class="btn-group" data-toggle="buttons" style='margin-left:10px;'>
           <label class="btn btn-default">
-            <input name='jeniskelamin' type="radio" id="q156" name="quality[25]" value="Laki Laki" /> L
+            <input type="radio" id="jenis-kelamin" name="jenis-kelamin" value="laki-laki" /> L
           </label>
           <label class="btn btn-default active">
-            <input name='jeniskelamin' type="radio" id="q160" name="quality[25]" checked="checked" value="Perempuan" /> P
+            <input type="radio" id="jenis-kelamin" name="jenis-kelamin" value="perempuan" /> P
           </label>
           </div>
         </div>
         </td>
+      
+
       </tr>
     </table>
-    <button type='submit' class='btn pull-right' style='background:#FFB848;color:white;'>Tambahkan</button>
+    <button type='submit' name="button" class='btn pull-right' style='background:#FFB848;color:white;'>Tambahkan</button>
+ </div>
   </div>
   </div>
-  </div>
-    <div class='col-md-7'>
+
+</form>    <div class='col-md-7'>
   <div class="panel panel-default" style='border:none;'>
   <div class="panel-heading" style='background:#7D6BA1;'>
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-user'></i> List User</h2>
@@ -216,36 +222,7 @@ if($_SESSION['TIPE']!="admin"){
   <h2 class='text-center' style='color:grey;'> Info User </h2>
   <hr style='width:50px;border:1px solid #d4d4d4;'>
   <div class='col-md-12' style='max-height:1200px;overflow:auto;'>
-    <div class='col-md-4' style='margin-top:20px;'>
-      <div class='profilbig'>
-        <center><br><img src="../profil/img/profil.jpg" style='border-radius:50%;' height='100' width='100'>
-        <br><br><h3 style='margin:0;color:white;'>Ananda Prameswary Putri</h3>
-        <h4>XI RPL B</h4>
-        <h4>Perempuan</h4>
-        <br>
-        </center>
-      </div>
-    </div>
-    <div class='col-md-4' style='margin-top:20px;'>
-      <div class='profilbig'>
-        <center><br><img src="../profil/img/profil.jpg" style='border-radius:50%;' height='100' width='100'>
-        <br><br><h3 style='margin:0;color:white;'>USER 2</h3>
-        <h4>XI RPL B</h4>
-        <h4>Perempuan</h4>
-        <br>
-        </center>
-      </div>
-    </div>
-    <div class='col-md-4' style='margin-top:20px;'>
-      <div class='profilbig'>
-        <center><br><img src="../profil/img/profil.jpg" style='border-radius:50%;' height='100' width='100'>
-        <br><br><h3 style='margin:0;color:white;'>USER 3</h3>
-        <h4>XI RPL B</h4>
-        <h4>Perempuan</h4>
-        <br>
-        </center>
-      </div>
-    </div>
+    <?php info_user(); ?>
   </div>
   </div>
 </div>

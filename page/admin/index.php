@@ -5,7 +5,6 @@ include('../../system/function.php');
 if(!isset($_SESSION['USERNAME'])){
     die("Anda belum login");
 }
-
 if($_SESSION['TIPE']!="admin"){
     header('location:../../index.php');
 }
@@ -112,19 +111,19 @@ if($_SESSION['TIPE']!="admin"){
     </ol>
     <div class='col-md-4'>
       <div class='komen'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php komen(); ?> </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_komen(); ?> </h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> New Comment </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='user'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php user(); ?> </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_user(); ?> </h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> User </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='barang'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>60 </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_admin(); ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Item </h3>
       </div>
     </div>
@@ -133,26 +132,30 @@ if($_SESSION['TIPE']!="admin"){
   <hr style='width:50px;border:1px solid #d4d4d4;'>
   <div class='col-md-5'>
   <div class="panel panel-default" style='border:none;'>
+  
   <div class="panel-heading" style='background:#FFB848;'>
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-plus'></i> Tambah Barang</h2>
   </div>
   <div class="panel-body" style='background:white;border:1px solid #FFB848;border-top:none;'>
-    <table width='100%'>
+  
+  <form method="post" action="../../system/tambahBarang.php">
+      <table width='100%'>
       <tr>
-        <td width='100'>
+           <td width='100'>
           Nama barang
         </td>
         <td>
           <div class="input-group">
-          <select class="form-control" placeholder="Nama barang..." style='border:none;box-shadow:none;'>
-          <option>Laptop</option>
-          <option>Infocus</option>
-          <option>Speaker</option>
-          <option>Handicam</option>
-          <option>Pocket</option>
-          <option>DLSR</option>
-          <option>Movie Camera</option>
-          <option>Jimbe</option>
+          <select name="name_brg" class="form-control" placeholder="Nama barang..." style='border:none;box-shadow:none;'>
+          <option value="1">Laptop</option>
+          <option value="2">Speaker</option>
+          <option value="3">DSLR</option>
+          <option value="4">Proyektor</option>
+          <option value="5">HandyCam</option>
+          <option value="6">Cam Pocket</option>
+          <option value="7">Gitar</option>
+          <option value="8">Movie Cam</option>
+          <option value="9">Jimbe</option>
         </select>
         </div>
         </td>
@@ -169,7 +172,7 @@ if($_SESSION['TIPE']!="admin"){
         </td>
         <td>
           <div class="input-group">
-          <input type="text" class="form-control" placeholder="Merk barang..." style='border:none;box-shadow:none;'>
+          <input type="text" name="merk_brg" class="form-control" placeholder="Merk barang..." style='border:none;box-shadow:none;'>
         </div>
         </td>
       </tr>
@@ -179,15 +182,18 @@ if($_SESSION['TIPE']!="admin"){
         </td>
         <td>
           <div class="input-group">
-          <input type="number" class="form-control" placeholder="Jumlah..." style='border:none;box-shadow:none;'>
+          <input type="number" name="jumlah_brg" class="form-control" placeholder="Jumlah..." style='border:none;box-shadow:none;'>
         </div>
         </td>
       </tr>
     </table>
-    <button type='button' class='btn pull-right' style='background:#FFB848;color:white;'>Kirim</button>
+
+    <button type='submit' class='btn pull-right' style='background:#FFB848;color:white;'>Kirim</button>
   </div>
   </div>
   </div>
+</form>
+
   <div class='col-md-7'>
   <div class="panel panel-default" style='border:none;'>
   <div class="panel-heading" style='background:#7D6BA1;'>
@@ -212,30 +218,19 @@ if($_SESSION['TIPE']!="admin"){
           <h4 style='color:black;'>Jenis Kelamin</h4>
         </td>
       </tr>
-      <tr>
-        <td>
-          1
-        </td>
-        <td>
-          Ferdi
-        </td>
-        <td>
-          XI RPL B
-        </td>
-        <td>
-          14 Kali
-        </td>
-        <td>
-          Cowo
-        </td>
-      </tr>
-    </table>
+        
+          <!--list User-->
+
+          <?php list_user_lengkap(); ?>
+
+      </table>
   </div>
   </div>
   </div>
   <div class='col-md-12' style='margin-top:20px;'>
   <div class="panel panel-default" style='border:none;'>
   <div class="panel-heading" style='background:#14B9D6;'>
+
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-book'></i> List Barang</h2>
   </div>
   <div class="panel-body" style='background:white;border:1px solid #14B9D6;border-top:none;max-height:300px;overflow:auto;'>
@@ -248,44 +243,14 @@ if($_SESSION['TIPE']!="admin"){
           <h4 style='color:black;'>Merk</h4>
         </td>
         <td>
-          <h4 style='color:black;'>Jumlah</h4>
+          <h4 style='color:black;'>Kode Barang</h4>
         </td>
         <td>
           <h4 style='color:black;'>Aksi</h4>
         </td>
       </tr>
-      <tr>
-        <td>
-          Laptop
-        </td>
-        <td>
-          Xenom
-        </td>
-        <td>
-          2
-        </td>
-        <td>
-          <span class='glyphicon glyphicon-edit' style='color:grey;'></span>
-          &nbsp; &nbsp;
-          <span class='glyphicon glyphicon-remove' style='color:red;'></span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Infocus
-        </td>
-        <td>
-          Dell
-        </td>
-        <td>
-          2
-        </td>
-        <td>
-          <span class='glyphicon glyphicon-edit' style='color:grey;'></span>
-          &nbsp; &nbsp;
-          <span class='glyphicon glyphicon-remove' style='color:red;'></span>
-        </td>
-      </tr>
+  
+    <?php list_barang();  ?>
     </table>
   </div>
   </div>
@@ -297,5 +262,45 @@ if($_SESSION['TIPE']!="admin"){
 <center><img src="../../img/thumb.png" height='50' style='margin-top:50px;'>
       <h5 style='color:#333;'>Made with love by Cowoteam</h5>
       </center>
+
+
+       <!-- keterangan Tambah barang -->
+
+<?php 
+if(!empty($_GET['tambah']))
+{
+       if($_GET['tambah'] == '1')
+        {
+            echo "<script language=\"Javascript\">\n";
+            echo "confirmed = window.alert('Sukses menginput data!');";
+            echo "</script>";
+        }
+        else
+        {
+            echo "<script language=\"Javascript\">\n";
+            echo "window.alert('Gagal mengiput data!');";
+            echo "</script>";
+        }
+}
+?>           
+           <!-- Keterangan Delete -->
+<?php 
+if(!empty($_GET['delete']))
+{
+       if($_GET['delete'] == '1')
+       {
+            echo "<script language=\"Javascript\">\n";
+            echo "confirmed = window.alert('Barang berhasil di delete!');";
+            echo "</script>";
+       }
+       else if($_GET['delete'] == '2')
+        {
+            echo "<script language=\"Javascript\">\n";
+            echo "window.alert('deleted');";
+            echo "</script>";
+        }
+}
+?>
+
 </body>
 </html>

@@ -15,6 +15,9 @@
 </head>
 
 <body style='background:#3333;'>
+<?php 
+require('system/function.php');
+ ?>
 <div class="navbar navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -96,40 +99,40 @@
     </div>
     </div>
     <div class='col-md-3' style='border:1px solid white;border-radius:10px;margin-left:10px;'>
-   	<h1>5</h1>
-    		<p>Laptop</p>
+    <h1><?php jumlah(1); ?></h1>
+        <p><?php nama_brg(1); ?></p>
     </div>
     <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;'>
-   	<h1>8</h1>
-    		<p>Infocus</p>
+    <h1><?php jumlah(2); ?></h1>
+        <p><?php nama_brg(2); ?></p>
     </div>
     <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;'>
-   	<h1>18</h1>
-    		<p>Speaker</p>
+    <h1><?php jumlah(3); ?></h1>
+        <p><?php nama_brg(3); ?></p>
     </div>
     <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-   	<h1>16</h1>
-    		<p>Handicam</p>
+    <h1><?php jumlah(4); ?></h1>
+        <p><?php nama_brg(4); ?></p>
     </div>
     <div class='col-md-3' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-   	<h1>5</h1>
-    		<p>Pocket</p>
+    <h1><?php jumlah(5); ?></h1>
+        <p><?php nama_brg(5); ?></p>
     </div>
     <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-   	<h1>7</h1>
-    		<p>DLSR</p>
+    <h1><?php jumlah(6); ?></h1>
+        <p><?php nama_brg(6); ?></p>
     </div>
     <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-   	<h1>1</h1>
-    		<p>Movie Camera</p>
+    <h1><?php jumlah(7); ?></h1>
+        <p><?php nama_brg(7); ?></p>
     </div>
     <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-   	<h1>6</h1>
-    		<p>Gitar</p>
+    <h1><?php jumlah(8); ?></h1>
+        <p><?php nama_brg(8); ?></p>
     </div>
     <div class='col-md-3' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-   	<h1>6</h1>
-    		<p>Jimbe</p>
+    <h1><?php jumlah(9); ?></h1>
+        <p><?php nama_brg(9); ?></p>
     </div>
     <div class='col-md-7' style='margin-top:20px;'>
 	<p>Syarat dan ketentuan berlaku <a href='#'><span class='glyphicon glyphicon-question-sign'></span></a></p> 

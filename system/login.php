@@ -12,6 +12,7 @@ if($op=="in"){
         $c = mysql_fetch_array($cek);
         $_SESSION['USERNAME'] = $c['USERNAME'];
         $_SESSION['TIPE'] = $c['TIPE'];
+        $_SESSION['USER_ID'] = $c['USER_ID'];
         if($c['TIPE']=="user"){
             header("location:../page/welcome");
         }

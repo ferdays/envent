@@ -116,56 +116,56 @@ if($_SESSION['TIPE']!="user"){
 			<br>
 			<div class='col-md-3' style='background:#1BBC9B;'>
 				<center>
-					<h1 style='color:white;'>15</h1>
-					<h3> Laptop </h3>
+					<h1 style='color:white;'><?php jumlah(1) ?></h1>
+					<h3><?php nama_brg(1); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-7' style='background:#4390DF;'>
 				<center>
-					<h1 style='color:white;'>12</h1>
-					<h3> Speaker </h3>
+					<h1 style='color:white;'><?php jumlah(2) ?></h1>
+					<h3><?php nama_brg(2); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-2' style='background:#e67e22;'>
 				<center>
-					<h1 style='color:white;'>5</h1>
-					<h3> DLSR </h3>
+					<h1 style='color:white;'><?php jumlah(3) ?></h1>
+					<h3><?php nama_brg(3); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-7' style='background:#9b59b6;'>
 				<center>
-					<h1 style='color:white;'>3</h1>
-					<h3> Infocus </h3>
+					<h1 style='color:white;'><?php jumlah(4) ?></h1>
+					<h3><?php nama_brg(4); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-2' style='background:#e74c3c;'>
 				<center>
-					<h1 style='color:white;'>4</h1>
-					<h3> Handicam </h3>
+					<h1 style='color:white;'><?php jumlah(5) ?></h1>
+					<h3><?php nama_brg(5); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-3' style='background:#1BBC9B;'>
 				<center>
-					<h1 style='color:white;'>1</h1>
-					<h3> Pocket </h3>
+					<h1 style='color:white;'><?php jumlah(6) ?></h1>
+					<h3><?php nama_brg(6); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-2' style='background:#4390DF;'>
 				<center>
-					<h1 style='color:white;'>1</h1>
-					<h3> Gitar </h3>
+					<h1 style='color:white;'><?php jumlah(7) ?></h1>
+					<h3><?php nama_brg(7); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-3' style='background:#e67e22;'>
 				<center>
-					<h1 style='color:white;'>5</h1>
-					<h3> Jimbe </h3>
+					<h1 style='color:white;'><?php jumlah(8) ?></h1>
+					<h3><?php nama_brg(8); ?></h3>
 				</center>
 			</div>
 			<div class='col-md-7' style='background:#2F74A3;'>
 				<center>
-					<h1 style='color:white;'>1</h1>
-					<h3> Movie Camera </h3>
+					<h1 style='color:white;'><?php jumlah(9) ?></h1>
+					<h3><?php nama_brg(9); ?></h3>
 				</center>
 			</div>
 			<h3 style='color:#333;margin-top:20px;'> . <br><br>Mau pinjam apa ?</h3>
@@ -180,22 +180,22 @@ if($_SESSION['TIPE']!="user"){
 			    <strong>Sukses!</strong> ID kamu adalah <b><font style='font-size:20px;color:red;'>1</font> <strong>Simpan ID kamu untuk mengembalikan barang</strong></b>
 			</div>
 			-->
-			<form>
+			<form method="post" action="../../system/pinjam.php">
 				<div class="form-group">
 				  <label for="sel1">Nama Barang:</label>
-				  <select class="form-control" id="sel1" style='font-size:15px;'>
-				    <option>Speaker</option>
-				    <option>Infocus</option>
-				    <option>Laptop</option>
-				    <option>Handicam</option>
-				    <option>DLSR</option>
-				    <option>Pocket</option>
-				    <option>Movie Camera</option>
-				    <option>Gitar</option>
-				    <option>Jimbe</option>
+				  <select name="nama_brg" class="form-control" id="sel1" style='font-size:15px;'>
+				    <option value="1">Laptop</option>
+				    <option Value="2">Speaker</option>
+				    <option value="3">DSLR</option>
+				    <option Value="4">Proyektor</option>
+				    <option value="5">HandyCam</option>
+				    <option value="6">PocketCam</option>
+				    <option value="7">Gitar</option>
+				    <option value="8">MovieCam</option>
+				    <option value="9">Jimbe</option>
 				  </select>
 					<br>
-				  <input type='number' class='form-control' placeholder='Jumlah'>
+				  <input name="kode_barang" type='number' class='form-control' placeholder='kode_barang'>
 					<br>
 				  <center><button type="submit" class="btn btn-success">Pinjam</button></center>
 				</div>
@@ -204,5 +204,22 @@ if($_SESSION['TIPE']!="user"){
 			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
 			</center>
 		</div>
+
+<!-- Keterangan -->
+
+<?php 
+if(!empty($_GET['pinjam']))
+{
+       if($_GET['pinjam'] == 'sukses')
+        {
+        	alert("Barang Berhasil di Pinjam!");
+        }
+        else
+        {
+        	alert("Barang yang anda minta Sedang di pinjam.");
+        }
+}
+?>   
+
 </body>
 </html>

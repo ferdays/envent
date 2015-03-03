@@ -154,19 +154,19 @@ if($_SESSION['TIPE']!="admin"){
     </ol>
     <div class='col-md-4'>
       <div class='komen'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php komen(); ?> </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_komen(); ?> </h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> New Comment </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='user'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php user(); ?> </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_user(); ?> </h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> User </h3>
       </div>
     </div>
     <div class='col-md-4'>
       <div class='barang'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>60 </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_barang() ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Item </h3>
       </div>
     </div>
@@ -185,13 +185,13 @@ if($_SESSION['TIPE']!="admin"){
   <hr style='width:500px;border:1px solid #d4d4d4;margin-top:450px;'>
   <div class='col-md-4' style='margin-top:20px;'>
       <div class='riwayat'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>2545 </h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_peminjaman(); ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Peminjaman Barang </h3>
       </div>
     </div>
   <div class='col-md-4' style='margin-top:20px;'>
       <div class='admin'>
-        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'>1</h1>
+        <h1 class='text-right' style='margin:0;padding-top:25px;margin-right:20px;color:white;'><?php jumlah_admin(); ?></h1>
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Admin </h3>
       </div>
     </div>
