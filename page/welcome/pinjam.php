@@ -114,97 +114,418 @@ if($_SESSION['TIPE']!="user"){
 			<h3 style='color:#333;'> Barang yang tersedia saat ini</h3>
 			<hr style='width:300px;border:1px solid #d4d4d4;margin-top:-2px;' class='pull-left'>
 			<br>
+			<a href="#<?php nama_brg(1); ?>" id="login_pop">
 			<div class='col-md-3' style='background:#1BBC9B;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(1) ?></h1>
 					<h3><?php nama_brg(1); ?></h3>
 				</center>
 			</div>
+			</a>
+        	<a href="#<?php nama_brg(2); ?>" id="login_pop">
 			<div class='col-md-7' style='background:#4390DF;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(2) ?></h1>
 					<h3><?php nama_brg(2); ?></h3>
 				</center>
 			</div>
+			</a>
+        	<a href="#<?php nama_brg(3); ?>" id="login_pop">
 			<div class='col-md-2' style='background:#e67e22;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(3) ?></h1>
 					<h3><?php nama_brg(3); ?></h3>
 				</center>
 			</div>
+			</a>
+			<a href="#<?php nama_brg(4); ?>" id="login_pop">
 			<div class='col-md-7' style='background:#9b59b6;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(4) ?></h1>
 					<h3><?php nama_brg(4); ?></h3>
 				</center>
 			</div>
+			</a>
+			<a href="#<?php nama_brg(5); ?>" id="login_pop">
 			<div class='col-md-2' style='background:#e74c3c;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(5) ?></h1>
 					<h3><?php nama_brg(5); ?></h3>
 				</center>
 			</div>
+			</a>
+			<a href="#<?php nama_brg(6); ?>" id="login_pop">
 			<div class='col-md-3' style='background:#1BBC9B;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(6) ?></h1>
 					<h3><?php nama_brg(6); ?></h3>
 				</center>
 			</div>
+			</a>
+			<a href="#<?php nama_brg(7); ?>" id="login_pop">
 			<div class='col-md-2' style='background:#4390DF;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(7) ?></h1>
 					<h3><?php nama_brg(7); ?></h3>
 				</center>
 			</div>
+			</a>
+			<a href="#<?php nama_brg(8); ?>" id="login_pop">
 			<div class='col-md-3' style='background:#e67e22;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(8) ?></h1>
 					<h3><?php nama_brg(8); ?></h3>
 				</center>
 			</div>
+			</a>
+			<a href="#<?php nama_brg(9); ?>" id="login_pop">
 			<div class='col-md-7' style='background:#2F74A3;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(9) ?></h1>
 					<h3><?php nama_brg(9); ?></h3>
 				</center>
 			</div>
-			<h3 style='color:#333;margin-top:20px;'> . <br><br>Mau pinjam apa ?</h3>
-			<hr style='width:300px;border:1px solid #d4d4d4;margin-top:-2px;' class='pull-left'>
-			<br>
-			
-			<!-- <div class="alert alert-danger" role='alert'>
-			    <strong>Error!</strong> A problem has been occurred while submitting your data. Please try again
-			</div>
-			
-			<div class="alert alert-success" role='alert'>
-			    <strong>Sukses!</strong> ID kamu adalah <b><font style='font-size:20px;color:red;'>1</font> <strong>Simpan ID kamu untuk mengembalikan barang</strong></b>
-			</div>
-			-->
-			<form method="post" action="../../system/pinjam.php">
-				<div class="form-group">
-				  <label for="sel1">Nama Barang:</label>
-				  <select name="nama_brg" class="form-control" id="sel1" style='font-size:15px;'>
-				    <option value="1">Laptop</option>
-				    <option Value="2">Speaker</option>
-				    <option value="3">DSLR</option>
-				    <option Value="4">Proyektor</option>
-				    <option value="5">HandyCam</option>
-				    <option value="6">PocketCam</option>
-				    <option value="7">Gitar</option>
-				    <option value="8">MovieCam</option>
-				    <option value="9">Jimbe</option>
-				  </select>
-					<br>
-				  <input name="kode_barang" type='number' class='form-control' placeholder='kode_barang'>
-					<br>
-				  <center><button type="submit" class="btn btn-success">Pinjam</button></center>
-				</div>
-			</form>
+			</a>
 			<center><img src="../../img/thumb-footer.png" height='50' style='margin-top:50px;'>
 			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
 			</center>
 		</div>
 
+		<!-- Pop Up -->
+
+		<!-- Pop Up 1 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(1); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(1); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+            				<center><h5 style='color:#333;'>7FAECFC9</h5></center>
+            			</td>
+            			<td>
+            				<center><h5 style='color:#333;'>Lenovo</h5></center>
+            			</td>
+            			<td>
+            				<center><button type="submit" class="btn" style='background:#62C2E4;color:white;'>Pinjam</button> <a href='#detail' class="btn" style='background:#63CA82;color:white;'>Lihat Detail</a></center>
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 1 -->
+
+        <!-- Pop Up 2 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(2); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(2); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 2 -->
+
+        <!-- Pop Up 3 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(3); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(3); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 3 -->
+
+        <!-- Pop Up 4 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(4); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(4); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 4 -->
+
+        <!-- Pop Up 5 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(5); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(5); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 5 -->
+
+        <!-- Pop Up 6 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(6); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(6); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 6 -->
+
+        <!-- Pop Up 7 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(7); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(7); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 7 -->
+
+        <!-- Pop Up 8 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(8); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(8); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 8 -->        
+
+        <!-- Pop Up 9 -->
+		<a href="#x" class="overlay" id="<?php nama_brg(9); ?>"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'><?php nama_brg(9); ?></h1>
+            	<table width='100%'>
+            		<tr>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Kode Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            				<center><h4 style='color:#333;'>Merk Barang</h4></center>
+            			</td>
+            			<td width='30%'>
+            			</td>
+            		</tr>
+            		 <tr>
+            			<td>
+ 
+            			</td>
+            			<td>
+
+            			</td>
+            			<td>
+            				
+            			</td>
+            		</tr>
+            	</table>
+	  		</form>
+        	</div>
+        <!-- Akhir Pop Up 9 -->
+
+		<a href="#x" class="overlay" id="detail"></a>
+	        <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+            	<h1 class="sign-up-title" style='color:#F0776C;'>Detail</h1>
+            <table>
+            	<tr>
+            		<td width='40%' rowspan='4'>
+            			<img src="../../img/barang/laptop-lenovo.jpg" style='max-width:300px;'>
+            		</td>
+            		<td width='30%'>
+            			<h4 style='color:black;margin-left:20px;'> Nama  </h4>
+            		</td>
+            		<td width='40%'>
+            			<h4 style='color:black;'> : Laptop Lenovo </h4>
+            		</td>
+            		<tr>
+            			<td width='30%'>
+            			<h4 style='color:black;margin-left:20px;'> Tanggal Pembelian  </h4>
+            		</td>
+            		<td width='40%'>
+            			<h4 style='color:black;'> : 02 - Maret - 2015 </h4>
+            		</td>
+            		</tr>
+            		<tr>
+            			<td width='30%'>
+            			<h4 style='color:black;margin-left:20px;'> Kondisi  </h4>
+            		</td>
+            		<td width='40%'>
+            			<h4 style='color:black;'> : <span class="label label-info">Baik </span></h4>
+            		</td>
+            		</tr>
+            		<tr>
+            			<td width='30%'>
+            			<h4 style='color:black;margin-left:20px;'> Status  </h4>
+            		</td>
+            		<td width='40%'>
+            			<h4 style='color:black;'> : <span class="label label-success">Ada </span></h4>
+            		</td>
+            		</tr>
+            	</tr>
+            </table>
+            <br>
+            <center><button type="submit" class="btn" style='background:#62C2E4;color:white;'>Pinjam</button> <a href='#x' class="btn" style='background:#63CA82;color:white;'>Kembali</a></center>
+	  		</form>
+        	</div>
 <!-- Keterangan -->
 
 <?php 
