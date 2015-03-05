@@ -151,6 +151,7 @@ if($_SESSION['TIPE']!="user"){
 			    <strong>Success</strong>
 			</div>
 			-->
+			
 			<form method='POST' action="../../system/kembali.php">
 				<div class="input-group">
 				  <span class="input-group-addon glyphicon glyphicon-hand-right" id="basic-addon1"></span>
@@ -159,10 +160,37 @@ if($_SESSION['TIPE']!="user"){
 				<br>
 				 <center><button type="submit" class="btn btn-success">Kembalikan</button></center>
 			</form>
+    		
+
     		<center><img src="../../img/thumb-footer.png" height='50' style='margin-top:50px;'>
 			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
 			</center>
 		</div>
+
+		           <!-- Keterangan Kembali -->
+<?php 
+if(!empty($_GET['kembali']))
+{
+       if($_GET['kembali'] == 'sukses')
+       {
+            echo "<script language=\"Javascript\">\n";
+            echo "confirmed = window.alert('Barang berhasil di Kembalikan! ;)');";
+            echo "</script>";
+       }
+       else if($_GET['kembali'] == 'gagal')
+        {
+            echo "<script language=\"Javascript\">\n";
+            echo "window.alert('Barang Tidak Berhasil di kembalikan, Coba yakin itu memang Id Peminjaman anda?');";
+            echo "</script>";
+        }
+        else if($_GET['kembali'] == 'sudah')
+        {
+            echo "<script language=\"Javascript\">\n";
+            echo "window.alert('Barang Sudah dikembalikan! Yakin yang anda masukan memang Id Peminjam anda?');";
+            echo "</script>";
+        }
+}
+?>
 
 </body>
 </html>

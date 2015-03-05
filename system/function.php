@@ -91,6 +91,18 @@ function list_pinjam($number){
 	";
 	}
 }
+function recent_activites(){
+	$peminjam_list = mysql_query("SELECT *FROM peminjam");
+	while($row=mysql_fetch_row($peminjam_list)){
+		$nama = mysql_query("SELECT *FROM user WHERE USER_ID=$row[1]");
+		$data_nama = mysql_fetch_array($nama);
+		$barang = mysql_query("SELECT *FROM barang WHERE BARANG_ID=$row[2] ");
+		$data_barang = mysql_fetch_array($barang);
+		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>".$data_nama['NAMA']."</h3>";
+		echo "<h4 style='color:#333;margin-left:90px;'>Meminjam ".$data_barang['MERK_BARANG']."</h4>";
+		echo "<p style='color:#333;margin-left:90px;'>$row[3]</p></div>";
+	}	 
+}
 // Fungsi Tampilan Admin 
 
 function list_user(){
@@ -126,7 +138,7 @@ function jumlah_komen(){
 	echo $saran;
 }
 function jumlah_barang(){
-	$total = mysql_query("SELECT SUM(JUMLAH) AS total_item FROM barang");
+	$total = mysql_query("SELECT SUM(jumlah) AS total_item FROM barang");
 	$hasil = mysql_fetch_array($total);
 	$output = number_format($hasil['total_item']);
 	echo $output;

@@ -9,6 +9,7 @@ if(!isset($_SESSION['USERNAME'])){
 if($_SESSION['TIPE']!="user"){
     header('location:../../index.php');
 }
+
 ?>
 <html>
 <head>
@@ -110,23 +111,9 @@ if($_SESSION['TIPE']!="user"){
 		<div class='col-md-12'>
 			<center><h1>Recent Activities</h1></center>
 			<hr style='width:100px;border:1px solid #d4d4d4;'>
-			<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>Ananda Prameswari Putri</h3>
-			<h4 style='color:#333;margin-left:90px;'>Meminjam Laptop</h4>
-			<p style='color:#333;margin-left:90px;'>03-Februari-2015 19:20</p>
-			</div>
-			<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>Ananda Prameswari Putri</h3>
-			<h4 style='color:#333;margin-left:90px;'>Meminjam Laptop</h4>
-			<p style='color:#333;margin-left:90px;'>03-Februari-2015 19:20</p>
-			</div>
-			<br><br>
-			<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>Ananda Prameswari Putri</h3>
-			<h4 style='color:#333;margin-left:90px;'>Meminjam Laptop</h4>
-			<p style='color:#333;margin-left:90px;'>03-Februari-2015 19:20</p>
-			</div>
-			<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>Ananda Prameswari Putri</h3>
-			<h4 style='color:#333;margin-left:90px;'>Meminjam Laptop</h4>
-			<p style='color:#333;margin-left:90px;'>03-Februari-2015 19:20</p>
-			</div>
+			
+			<?php recent_activites(); ?>
+
 			<center><img src="../../img/thumb-footer.png" height='50' style='margin-top:50px;'>
 			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
 			</center>
