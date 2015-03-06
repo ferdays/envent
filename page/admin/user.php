@@ -200,7 +200,7 @@ if($_SESSION['TIPE']!="admin"){
   <div class="panel-heading" style='background:#7D6BA1;'>
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-user'></i> List User</h2>
   </div>
-  <div class="panel-body" style='background:white;border:1px solid #7D6BA1;border-top:none;max-height:166px;overflow:auto;'>
+  <div class="panel-body" style='background:white;border:1px solid #7D6BA1;border-top:none;max-height:250px;overflow:auto;'>
     <table width='100%' border='1' style='text-align:center;border:1px solid #C0C6C2;'>
       <tr>
         <td>

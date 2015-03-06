@@ -119,7 +119,7 @@ if($_SESSION['TIPE']!="user"){
 					<hr style='width:100px;border:1px solid #d4d4d4;'>
 					<h4> <?php tampilalamat(); ?> </h4>
 					<h4> <?php tampiljk(); ?> </h4>
-					<h4> 14 Kali meminjam barang </h4><br>
+					<h4> <?php tampilpinjam(); ?> </h4><br>
 					<a href='edit.php' class='glyphicon glyphicon-pencil' style='font-size:20px;'></a><br>.
 					</center>
 				</div>

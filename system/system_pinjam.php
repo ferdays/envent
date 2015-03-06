@@ -12,7 +12,7 @@ $data = mysql_fetch_array($sql);
 
 if($sql){
 
-	if($data['jumlah']==1){
+	if($data['JUMLAH']==1){
 		$pinjam = mysql_query("UPDATE barang SET jumlah=0 WHERE BARANG_ID = '".$id_brg."' ");
 	
 	//cek + update Tabel User
@@ -33,10 +33,19 @@ if($sql){
 		$id_peminjam = " ".$data['JENIS_BARANG_ID']."0".$jumlah_pinjam_brg_akhir." ";
 	//Update Tabel Peminjam
 		$insert_pinjam = mysql_query("INSERT INTO peminjam(PEMINJAM_ID,USER_ID,BARANG_ID,TANGGAL_PINJAM) values('".$id_peminjam."', '".$user_id."', '".$id_brg."', now() ) ");
-		echo $jumlah_pinjam_brg;
+		//echo $jumlah_pinjam_brg;
 
 		echo "Anda Berhasil Meminjam Barang, Saat mengembalika diperlukan PEMINJAMAN_ID, Di saran kan untuk mencatat Peminjaman ID anda : '".$id_peminjam."' ";
 		echo "<a href='../page/welcome/pinjam.php?pinjam=sukses'>OKE</a>";
+	//update tabel Recent
+		$tampil = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID WHERE brg.BARANG_ID='".$id_brg."' ");
+		$row=mysql_fetch_row($tampil);
+		$jenis = $row[10];
+		$nama = $data_user['NAMA'];
+
+		mysql_query("INSERT INTO recent(PEMINJAM_ID,NAMA,JENIS,TANGGAL_PINJAM) values( '".$id_peminjam."', '".$nama."', '".$jenis."', now() ) ");
+
+
 		}
 
 }

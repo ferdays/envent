@@ -233,7 +233,7 @@ if($_SESSION['TIPE']!="admin"){
 
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-book'></i> List Barang</h2>
   </div>
-  <div class="panel-body" style='background:white;border:1px solid #14B9D6;border-top:none;max-height:300px;overflow:auto;'>
+  <div class="panel-body" style='background:white;border:1px solid #14B9D6;border-top:none;max-height:250px;overflow:auto;'>
     <table width='100%' border='1' style='text-align:center;border:1px solid #C0C6C2;'>
       <tr>
         <td>

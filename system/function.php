@@ -27,6 +27,14 @@ function tampiljk() {
 	$tjk=mysql_fetch_array($jk);
 	echo $tjk['JENIS_KELAMIN'];
 }
+function tampilpinjam(){
+	$username = $_SESSION['USERNAME'];
+	$pinjam=mysql_query("select * from user where USERNAME='$username'") or die(mysql_error());
+	$tjk=mysql_fetch_array($pinjam);
+	echo $tjk['BANYAK_MEMINJAM'];
+	echo " kali meminjam";
+
+}
 function tampilbackground() {
 	$username = $_SESSION['USERNAME'];
 	$background=mysql_query("select * from user where USERNAME='$username'") or die(mysql_error());
@@ -79,7 +87,7 @@ function list_pinjam($number){
 	echo "
 	<tr>
     	<td>
-    	<center><h5 style='color:#333;'>$row[2]</h5></center>
+    	<center><h5 style='color:#333;'>$row[0]</h5></center>
     	</td>
         <td>
         <center><h5 style='color:#333;'>$row[3]</h5></center>
@@ -92,15 +100,20 @@ function list_pinjam($number){
 	}
 }
 function recent_activites(){
-	$peminjam_list = mysql_query("SELECT *FROM peminjam");
+	$peminjam_list = mysql_query("SELECT *FROM recent");
 	while($row=mysql_fetch_row($peminjam_list)){
-		$nama = mysql_query("SELECT *FROM user WHERE USER_ID=$row[1]");
-		$data_nama = mysql_fetch_array($nama);
-		$barang = mysql_query("SELECT *FROM barang WHERE BARANG_ID=$row[2] ");
-		$data_barang = mysql_fetch_array($barang);
-		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>".$data_nama['NAMA']."</h3>";
-		echo "<h4 style='color:#333;margin-left:90px;'>Meminjam ".$data_barang['MERK_BARANG']."</h4>";
-		echo "<p style='color:#333;margin-left:90px;'>$row[3]</p></div>";
+		if($row[5]==NULL){
+			
+		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
+		echo "<h4 style='color:#333;margin-left:90px;'>Meminjam $row[3]</h4>";
+		echo "<p style='color:#333;margin-left:90px;'>$row[4]</p></div>";
+		}
+		else{
+		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
+		echo "<h4 style='color:#333;margin-left:90px;'>Mengembalikan $row[3]</h4>";
+		echo "<p style='color:#333;margin-left:90px;'>$row[5]</p></div>";
+			
+		}
 	}	 
 }
 // Fungsi Tampilan Admin 
@@ -138,7 +151,7 @@ function jumlah_komen(){
 	echo $saran;
 }
 function jumlah_barang(){
-	$total = mysql_query("SELECT SUM(jumlah) AS total_item FROM barang");
+	$total = mysql_query("SELECT SUM(JUMLAH) AS total_item FROM barang");
 	$hasil = mysql_fetch_array($total);
 	$output = number_format($hasil['total_item']);
 	echo $output;
@@ -202,7 +215,7 @@ while($row=mysql_fetch_row($tampil))
 	echo " 
 			<tr>
     	    <td>
-			$row[11]        
+			$row[10]        
         	</td>
         	<td>
         	$row[3]

@@ -102,7 +102,7 @@ if($_SESSION['TIPE']!="user"){
 				</div>
 		</div>
 		</a>
-		<a href="../../proses/logout.php"><div class='col-md-2' style='padding:0;'>
+		<a href="../../system/login.php?op=out"><div class='col-md-2' style='padding:0;'>
 				<div class='logout'>
 				</div>
 		</div>
