@@ -102,18 +102,26 @@ function list_pinjam($number){
 function recent_activites(){
 	$peminjam_list = mysql_query("SELECT *FROM recent");
 	while($row=mysql_fetch_row($peminjam_list)){
+	//data USER_ID dari table Peminjam
+		$table_pinjam = mysql_query("SELECT *FROM peminjam WHERE PEMINJAM_ID=$row[1] ");
+		$data_peminjam = mysql_fetch_array($table_pinjam);
+		$id_user = $data_peminjam['USER_ID'];
+	//Data User dari TAble User
+		$table_user = mysql_query("SELECT *FROM user WHERE USER_ID='".$id_user."' ");
+		$data_user = mysql_fetch_row($table_user);
+		$foto = $data_user['10'];
+
 		if($row[5]==NULL){
-			
-		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
+		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/$foto' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
 		echo "<h4 style='color:#333;margin-left:90px;'>Meminjam $row[3]</h4>";
 		echo "<p style='color:#333;margin-left:90px;'>$row[4]</p></div>";
 		}
 		else{
-		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/profil.jpg' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
+		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/$foto' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
 		echo "<h4 style='color:#333;margin-left:90px;'>Mengembalikan $row[3]</h4>";
 		echo "<p style='color:#333;margin-left:90px;'>$row[5]</p></div>";
-			
 		}
+
 	}	 
 }
 // Fungsi Tampilan Admin 
