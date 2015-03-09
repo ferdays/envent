@@ -179,13 +179,21 @@ if($_SESSION['TIPE']!="user"){
 			</div>
 			</a>
 			<a href="#<?php nama_brg(9); ?>" id="login_pop">
-			<div class='col-md-7' style='background:#2F74A3;'>
+			<div class='col-md-4' style='background:#2F74A3;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(9) ?></h1>
 					<h3><?php nama_brg(9); ?></h3>
 				</center>
 			</div>
 			</a>
+            <a href="#lainnya" id="login_pop">
+            <div class='col-md-3' style='background:#4390DF;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(9) ?></h1>
+                    <h3>Barang Lainnya</h3>
+                </center>
+            </div>
+            </a>
 			<center><img src="../../img/thumb-footer.png" height='50' style='margin-top:50px;'>
 			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
 			</center>
@@ -409,6 +417,29 @@ if($_SESSION['TIPE']!="user"){
         	</div>
         <!-- Akhir Pop Up 9 -->
 
+        <!-- Pop Up 10 -->
+        <a href="#x" class="overlay" id="lainnya"></a>
+            <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+                <h1 class="sign-up-title" style='color:#F0776C;'>Barang Lainnya</h1>
+                <table width='100%'>
+                    <tr>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Kode Barang</h4></center>
+                        </td>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Merk Barang</h4></center>
+                        </td>
+                        <td width='30%'>
+                        </td>
+                    </tr>
+
+                    <?php list_pinjam(9); ?>                     
+
+                </table>
+            </form>
+            </div>
+        <!-- Akhir Pop Up 10 -->
 
 		<a href="#x" class="overlay" id="detail"></a>
 	        <div class="popup">

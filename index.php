@@ -130,15 +130,48 @@ require('system/function.php');
     <h1><?php jumlah(8); ?></h1>
         <p><?php nama_brg(8); ?></p>
     </div>
-    <div class='col-md-3' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
+    <div class='col-md-1' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
     <h1><?php jumlah(9); ?></h1>
         <p><?php nama_brg(9); ?></p>
     </div>
+    <a href="#lainnya" id="login_pop">
+    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
+    <h1><?php jumlah(8); ?></h1>
+        <p>Lainnya</p>
+    </div>
+    </a>
     <div class='col-md-7' style='margin-top:20px;'>
 	<p>Syarat dan ketentuan berlaku <a href='#'><span class='glyphicon glyphicon-question-sign'></span></a></p> 
 	</div>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<h5> Made with love by Cowoteam </h5>
+
+    <!-- Popup Lainnya -->
+    <a href="#x" class="overlay" id="lainnya"></a>
+            <div class="popup">
+            <form class="sign-up" style='width:700px;'>
+                <h1 class="sign-up-title" style='color:#F0776C;'>Barang Lainnya</h1>
+                <table width='100%'>
+                    <tr>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Kode Barang</h4></center>
+                        </td>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Merk Barang</h4></center>
+                        </td>
+                    </tr>               
+                    <tr>
+                    <td>
+                    <center><h5 style='color:#333;'>-- Kode Barang --</h5></center>
+                    </td>
+                    <td>
+                    <center><h5 style='color:#333;'>-- Merk Barang --</h5></center>
+                    </td>
+                </tr>
+                </table>
+            </form>
+            </div>
+    <!-- Akhir Popup -->
 </div>
 </body>
 </html>
