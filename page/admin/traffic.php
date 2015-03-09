@@ -122,18 +122,9 @@ if($_SESSION['TIPE']!="admin"){
   <hr style='width:50px;border:1px solid #d4d4d4;'>
   <br>
   <div class='col-md-12' style='max-height:550px;overflow:auto;'>
-  <div class='col-md-6' style='margin-top:30px;'>
-    <img src="../profil/img/profil.jpg" style='border-radius:50%;' height='100' width='100' class='pull-left'>
-    <h3 style='color:grey;margin:0;margin-left:110px;'> Ananda Prameswary Putri </h3>
-    <h5 style='color:grey;margin:0;margin-left:110px;'> 05 Februari 2015 </h5><br>
-    <h4 style='color:grey;margin:0;margin-left:110px;'> Meminjam Laptop merk Asus</h4>
-  </div>
-  <div class='col-md-6' style='margin-top:30px;'>
-    <img src="../profil/img/profil.jpg" style='border-radius:50%;' height='100' width='100' class='pull-left'>
-    <h3 style='color:grey;margin:0;margin-left:110px;'> Ananda Prameswary Putri </h3>
-    <h5 style='color:grey;margin:0;margin-left:110px;'> 09 Februari 2015 </h5><br>
-    <h4 style='color:grey;margin:0;margin-left:110px;'> Mengembalikan Laptop merk Asus</h4>
-  </div>
+
+<?php recent_activites(); ?>
+
   </div>
   </div>
 </div>

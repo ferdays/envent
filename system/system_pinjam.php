@@ -42,10 +42,7 @@ if($sql){
 		$row=mysql_fetch_row($tampil);
 		$jenis = $row[10];
 		$nama = $data_user['NAMA'];
-
 		mysql_query("INSERT INTO recent(PEMINJAM_ID,NAMA,JENIS,TANGGAL_PINJAM) values( '".$id_peminjam."', '".$nama."', '".$jenis."', now() ) ");
-
-
 		}
 
 }

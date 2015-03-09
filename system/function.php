@@ -113,16 +113,23 @@ function recent_activites(){
 
 		if($row[5]==NULL){
 		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/$foto' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
-		echo "<h4 style='color:#333;margin-left:90px;'>Meminjam $row[3]</h4>";
+		echo "<h4 style='color:#333;margin-left:90px;'><font color='red'>Meminjam</font> $row[3]</h4>";
 		echo "<p style='color:#333;margin-left:90px;'>$row[4]</p></div>";
 		}
 		else{
 		echo "<div class='col-md-6' style='margin-top:20px;'><img src='../profil/img/$foto' class='img-circle pull-left' height='80' width='80' style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);'><h3 style='color:#333;margin-top:-5px;margin-left:90px;'>$row[2]</h3>";
-		echo "<h4 style='color:#333;margin-left:90px;'>Mengembalikan $row[3]</h4>";
+		echo "<h4 style='color:#333;margin-left:90px;'><font color='green'>Mengembalikan</font> $row[3]</h4>";
 		echo "<p style='color:#333;margin-left:90px;'>$row[5]</p></div>";
 		}
 
 	}	 
+}
+
+function Aktivitas(){
+	$table_pinjam_aktivitas = mysql_query("SELECT *FROM recent WHERE ");
+	echo "
+	<i class='glyphicon glyphicon-random pull-left'></i> <h4 style='color:black;'> &nbsp; Kamu meminjam Laptop pada tanggal 04-Februari-2015</h4>
+	";
 }
 // Fungsi Tampilan Admin 
 

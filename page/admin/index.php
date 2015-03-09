@@ -45,13 +45,15 @@ if($_SESSION['TIPE']!="admin"){
       </div>
         <a href="#x" class="overlay" id="tambah_form"></a>
         <div class="popup">
-            <form class="sign-up">
+            
+            <form action="../../system/tambahBarangBaru.php" class="sign-up">
         <h1 class="sign-up-title" style='color:#F0776C;'>Tambah barang baru</h1>
-        <input type="text" class="sign-up-input" placeholder="Nama barang">
-        <input type="text" class="sign-up-input" placeholder="Merk">
-        <input type="number" class="sign-up-input" placeholder="Jumlah">
+        <input name="jenis_barang" type="text" class="sign-up-input" placeholder="Nama barang" required>
+        <input name="nama_barang" type="text" class="sign-up-input" placeholder="Merk" required>
+        <input name="jumlah" type="number" class="sign-up-input" placeholder="Jumlah" required>
         <input type="submit" value="Kirim" class="sign-up-button">
       </form>
+
         </div>
             <a class="close" href="#close"></a>
       <div class='col-md-3 pull-right'>
