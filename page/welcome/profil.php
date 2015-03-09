@@ -129,8 +129,9 @@ if($_SESSION['TIPE']!="user"){
 					<br>
 					<center><h2 style='margin:0;padding:0;color:#333;'>Aktifitasmu</h2></center>
 					<hr style='width:100px;border:1px solid #d4d4d4;'>
-					<i class='glyphicon glyphicon-random pull-left'></i> <h4 style='color:black;'> &nbsp; Kamu meminjam Laptop pada tanggal 04-Februari-2015</h4>
-					<i class='glyphicon glyphicon-random pull-left'></i> <h4 style='color:black;'> &nbsp; Kamu meminjam Laptop pada tanggal 04-Februari-2015</h4>
+					
+					<?php aktivitas(); ?>
+
 				</div>
 				<br>
 			</div>
