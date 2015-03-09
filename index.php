@@ -7,7 +7,7 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
-	<!-- Tambahan -->
+	<!-- Tambahann -->
 	<link rel="stylesheet" type="text/css" href="css/tambahan.css">
 
 	<!-- Latest compiled and minified JavaScript -->
