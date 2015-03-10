@@ -136,7 +136,7 @@ require('system/function.php');
     </div>
     <a href="#lainnya" id="login_pop">
     <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah(8); ?></h1>
+    <h1><?php jumlah_lain(); ?></h1>
         <p>Lainnya</p>
     </div>
     </a>

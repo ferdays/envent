@@ -1,6 +1,15 @@
 <?php
 include('connect.php');
 
+function jumlah_lain(){
+	$sql_lebih = mysql_query("SELECT SUM(jumlah) AS total_item FROM barang WHERE JENIS_BARANG_ID ");
+		//$hitungan = mysql_num_rows($sql_lebih);
+		$hasil_hitung = mysql_fetch_array($sql_lebih);
+		$output = number_format($hasil_hitung['total_item']);
+		echo $output;
+	
+}
+
 // Fungsi Tampil User
 
 function tampilnama() {
