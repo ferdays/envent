@@ -153,6 +153,11 @@ require('system/function.php');
                 <h1 class="sign-up-title" style='color:#F0776C;'>Barang Lainnya</h1>
                 <table width='100%'>
                     <tr>
+
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Nama Barang</h4></center>
+                        </td>
+
                         <td width='30%'>
                             <center><h4 style='color:#333;'>Kode Barang</h4></center>
                         </td>
@@ -160,14 +165,9 @@ require('system/function.php');
                             <center><h4 style='color:#333;'>Merk Barang</h4></center>
                         </td>
                     </tr>               
-                    <tr>
-                    <td>
-                    <center><h5 style='color:#333;'>-- Kode Barang --</h5></center>
-                    </td>
-                    <td>
-                    <center><h5 style='color:#333;'>-- Merk Barang --</h5></center>
-                    </td>
-                </tr>
+                    
+                    <?php list_lainnya(); ?>
+
                 </table>
             </form>
             </div>

@@ -46,11 +46,13 @@ if($_SESSION['TIPE']!="admin"){
         <a href="#x" class="overlay" id="tambah_form"></a>
         <div class="popup">
             
-            <form action="../../system/tambahBarangBaru.php" class="sign-up">
+            <form method="POST" action="../../system/tambahBarangBaru.php" class="sign-up">
         <h1 class="sign-up-title" style='color:#F0776C;'>Tambah barang baru</h1>
+        
         <input name="jenis_barang" type="text" class="sign-up-input" placeholder="Nama barang" required>
         <input name="nama_barang" type="text" class="sign-up-input" placeholder="Merk" required>
         <input name="jumlah" type="number" class="sign-up-input" placeholder="Jumlah" required>
+        
         <input type="submit" value="Kirim" class="sign-up-button">
       </form>
 
@@ -148,17 +150,7 @@ if($_SESSION['TIPE']!="admin"){
         </td>
         <td>
           <div class="input-group">
-          <select name="name_brg" class="form-control" placeholder="Nama barang..." style='border:none;box-shadow:none;'>
-          <option value="1">Laptop</option>
-          <option value="2">Speaker</option>
-          <option value="3">DSLR</option>
-          <option value="4">Proyektor</option>
-          <option value="5">HandyCam</option>
-          <option value="6">Cam Pocket</option>
-          <option value="7">Gitar</option>
-          <option value="8">Movie Cam</option>
-          <option value="9">Jimbe</option>
-        </select>
+          <?php pilhan_pinjam(); ?>
         </div>
         </td>
       </tr>

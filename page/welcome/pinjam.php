@@ -189,7 +189,7 @@ if($_SESSION['TIPE']!="user"){
             <a href="#lainnya" id="login_pop">
             <div class='col-md-3' style='background:#4390DF;'>
                 <center>
-                    <h1 style='color:white;'><?php jumlah(9) ?></h1>
+                    <h1 style='color:white;'><?php jumlah_lain() ?></h1>
                     <h3>Barang Lainnya</h3>
                 </center>
             </div>
@@ -428,64 +428,20 @@ if($_SESSION['TIPE']!="user"){
                             <center><h4 style='color:#333;'>Kode Barang</h4></center>
                         </td>
                         <td width='30%'>
-                            <center><h4 style='color:#333;'>Merk Barang</h4></center>
+                            <center><h4 style='color:#333;'>Nama Barang</h4></center>
                         </td>
                         <td width='30%'>
                         </td>
                     </tr>
 
-                    <?php list_pinjam(9); ?>                     
+                    <?php list_pinjam_lain(); ?>                     
 
                 </table>
             </form>
             </div>
         <!-- Akhir Pop Up 10 -->
 
-		<a href="#x" class="overlay" id="detail"></a>
-	        <div class="popup">
-            <form class="sign-up" style='width:700px;'>
-            	<h1 class="sign-up-title" style='color:#F0776C;'>Detail</h1>
-            <table>
-            	<tr>
-            		<td width='40%' rowspan='4'>
-            			<img src="../../img/barang/laptop-lenovo.jpg" style='max-width:300px;'>
-            		</td>
-            		<td width='30%'>
-            			<h4 style='color:black;margin-left:20px;'> Nama  </h4>
-            		</td>
-            		<td width='40%'>
-            			<h4 style='color:black;'> : Laptop Lenovo </h4>
-            		</td>
-            		<tr>
-            			<td width='30%'>
-            			<h4 style='color:black;margin-left:20px;'> Tanggal Pembelian  </h4>
-            		</td>
-            		<td width='40%'>
-            			<h4 style='color:black;'> : 02 - Maret - 2015 </h4>
-            		</td>
-            		</tr>
-            		<tr>
-            			<td width='30%'>
-            			<h4 style='color:black;margin-left:20px;'> Kondisi  </h4>
-            		</td>
-            		<td width='40%'>
-            			<h4 style='color:black;'> : <span class="label label-info">Baik </span></h4>
-            		</td>
-            		</tr>
-            		<tr>
-            			<td width='30%'>
-            			<h4 style='color:black;margin-left:20px;'> Status  </h4>
-            		</td>
-            		<td width='40%'>
-            			<h4 style='color:black;'> : <span class="label label-success">Ada </span></h4>
-            		</td>
-            		</tr>
-            	</tr>
-            </table>
-            <br>
-            <center><button type="submit" class="btn" style='background:#62C2E4;color:white;'>Pinjam</button> <a href='#x' class="btn" style='background:#63CA82;color:white;'>Kembali</a></center>
-	  		</form>
-        	</div>
+
 <!-- Keterangann -->
        
 <?php 

@@ -18,15 +18,15 @@ $(function () {
                 marginBottom: 25
             },
             title: {
-                text: 'User',
+                text: 'BARANG',
                 x: -20
             },
             xAxis: {
-                categories: ['10','11','12','13','14','15']
+                categories: ['12','13','14','15']
             },
             yAxis: {
                 title: { 
-                    text: 'Banyaknya User'
+                    text: 'Banyaknya BARANG'
                 },
                 plotLines: [{
                     value: 0,
@@ -44,13 +44,13 @@ $(function () {
                 layout: 'vertical',
                 align: 'right',
                 verticalAlign: 'top',
-                x: -10,
+                x: -20,
                 y: 100,
                 borderWidth: 0
             },
             series: [{  
-                name: 'User',  
-                data: [1660, 1946,2271,2590,3004,3550]
+                name: 'Jumlah Barang',  
+                data: [0,0, 0,21]
             }]
         });
     });

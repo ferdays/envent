@@ -41,7 +41,7 @@ if($_SESSION['TIPE']!="admin"){
                 marginBottom: 25
             },
             title: {
-                text: 'Visitor',
+                text: 'User',
                 x: -20
             },
             xAxis: {
@@ -49,7 +49,7 @@ if($_SESSION['TIPE']!="admin"){
             },
             yAxis: {
                 title: { 
-                    text: 'Banyaknya Visitor'
+                    text: 'Banyaknya User'
                 },
                 plotLines: [{
                     value: 0,
@@ -72,8 +72,8 @@ if($_SESSION['TIPE']!="admin"){
                 borderWidth: 0
             },
             series: [{  
-                name: 'Visitor',  
-                data: [1660, 1946,2271,2590,3004,3550,1234,4124,5124,2413,1234,5312]
+                name: 'User',  
+                data: [0, 0,5]
             }]
         });
     });
@@ -173,12 +173,12 @@ if($_SESSION['TIPE']!="admin"){
   <hr style='width:500px;border:1px solid #d4d4d4;margin-top:200px;'>
   <div class='col-md-6' style='background:white;'>
     <br>
-    <h3 style='color:#4DB3A2;display:inline;'><b>VISITOR</b> </h3><p style='color:grey;display:inline;'>Tahun 2015...</p>
+    <h3 style='color:#4DB3A2;display:inline;'><b>USER</b> </h3><p style='color:grey;display:inline;'>Tahun 2015...</p>
     <hr style='border:1px solid #d4d4d4;'><div id="container" style="width:103%; height: 400px; margin: 0 auto"></div>
   </div>
   <div class='col-md-5' style='background:white;margin-left:20px;height:400px;'>
     <br>
-    <h3 style='color:#CC4444;display:inline;'><b>USER</b> </h3><p style='color:grey;display:inline;'>Tahun 2010-2015</p>
+    <h3 style='color:#CC4444;display:inline;'><b>BARANG</b> </h3><p style='color:grey;display:inline;'>Tahun 2010-2015</p>
     <hr style='border:1px solid #d4d4d4;'>
     <iframe src='userchart.php' style='border:none;width:100%;height:100%;overflow:none;'></iframe>
   </div>
