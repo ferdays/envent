@@ -24,6 +24,7 @@ if($_SESSION['TIPE']!="user"){
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/modernizr.js"></script> <!-- Modernizr -->
 </head>
 <body style='background:<?php tampilbackground(); ?>;'>
 <div class="navbar">
@@ -139,5 +140,8 @@ if($_SESSION['TIPE']!="user"){
 			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
 			</center>
 		</div>
+		<a href="#0" class="cd-top">Top</a>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../../js/main.js"></script> <!-- Gem jQuery -->
 </body>
 </html>

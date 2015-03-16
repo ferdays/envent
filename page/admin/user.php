@@ -27,9 +27,10 @@ if($_SESSION['TIPE']!="admin"){
   <script src="../../js/jquery-1.3.2.min.js"></script>
   <script src="../../js/jquery-1.11.0.min.js"></script>
   <script src="../../js/bootstrap.min2.js"></script>
+  <script src="../../js/modernizr.js"></script> <!-- Modernizr -->
 </head>
 <body style='background:#C0C6C2;'>
-  <div class='container' style='background:#F1F3FA;padding:0;box-shadow: 0 5px 5px black;height:auto;'>
+  <div class='container' style='background:#F1F3FA;height:auto;padding:0;box-shadow: 0 5px 5px black;'>
   <div class='navbar navbar-fixed-top'>
   <div class='container' style='padding:0;box-shadow: 0 5px 5px rgba(0,0,0,.09);'>
   <div class='col-md-2' style='background:#14B9D6;'>
@@ -61,7 +62,7 @@ if($_SESSION['TIPE']!="admin"){
 </div>
 <br><br><br><br>
 <div class='container' style='padding:0;'>
-  <div class='col-md-2' style='height:2000px;background:#4D5B69;padding:0;'>
+  <div class='col-md-2' style='height:2000px;background:#4D5B69;padding:0;position:fixed;width:14.5%;'>
     <a href="index.php"><div class='col-md-12 lain' style='border-bottom:1px solid grey;'>
       <center><h2 class='glyphicon glyphicon-home' style='color:#15c1df;'></h2>
       <h4> Dashboard </h4>
@@ -93,7 +94,7 @@ if($_SESSION['TIPE']!="admin"){
     </div>
     </a>
   </div>
-  <div class='col-md-10'>
+  <div class='col-md-10' style='margin-left:17%;'>
     <h2 style='color:grey;'>User Panel</h2>
     <ol class="breadcrumb" style='background:white;'>
       <li><i class='glyphicon glyphicon-user'> </i><a href='#'> &nbsp;E-nvent </a> </li> 
@@ -224,11 +225,13 @@ if($_SESSION['TIPE']!="admin"){
   <div class='col-md-12' style='max-height:1200px;overflow:auto;'>
     <?php info_user(); ?>
   </div>
+  <br>
+  .
   </div>
 </div>
 </div>
-<center><img src="../../img/thumb.png" height='50' style='margin-top:50px;'>
-      <h5 style='color:#333;'>Made with love by Cowoteam</h5>
-      </center>
+<a href="#0" class="cd-top">Top</a>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../../js/main.js"></script> <!-- Gem jQuery -->
 </body>
 </html>
