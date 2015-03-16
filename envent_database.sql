@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2015 at 03:29 AM
+-- Generation Time: Mar 16, 2015 at 03:03 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -29,16 +29,32 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `barang` (
   `BARANG_ID` int(11) NOT NULL AUTO_INCREMENT,
   `JENIS_BARANG_ID` int(11) NOT NULL,
-  `KODE_BARANG` varchar(20) NOT NULL,
   `MERK_BARANG` varchar(100) DEFAULT NULL,
+  `NAMA_BARANG` varchar(50) DEFAULT NULL,
   `FOTO_BARANG` varchar(500) DEFAULT NULL,
   `KONDISI` varchar(20) DEFAULT NULL,
   `STATUS` varchar(20) DEFAULT NULL,
   `TANGGAL_PEMBELIAN` date DEFAULT NULL,
   `JUMLAH` int(11) DEFAULT '1',
+  `KODE_BARANG` varchar(15) NOT NULL,
   PRIMARY KEY (`BARANG_ID`),
   KEY `FK_RELATIONSHIP_2` (`JENIS_BARANG_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`BARANG_ID`, `JENIS_BARANG_ID`, `MERK_BARANG`, `NAMA_BARANG`, `FOTO_BARANG`, `KONDISI`, `STATUS`, `TANGGAL_PEMBELIAN`, `JUMLAH`, `KODE_BARANG`) VALUES
+(17, 1, 'AXIOO', NULL, NULL, 'BAIK', NULL, NULL, 1, '1000'),
+(18, 1, 'AXIOO', NULL, NULL, 'BAIK', NULL, NULL, 1, '1001'),
+(19, 1, 'XENOM', NULL, NULL, 'BAIK', NULL, NULL, 1, '1002'),
+(20, 1, 'XENOM', NULL, NULL, 'BAIK', NULL, NULL, 1, '1003'),
+(21, 1, 'XENOM', NULL, NULL, 'BAIK', NULL, NULL, 1, '1004'),
+(22, 5, 'Toshiba', NULL, NULL, 'BAIK', NULL, NULL, 1, '5000'),
+(23, 9, 'Yamaha', NULL, NULL, 'BAIK', NULL, NULL, 1, '9000'),
+(24, 16, 'Toshiba', NULL, NULL, 'BAIK', NULL, NULL, 1, '16000'),
+(25, 16, 'Toshiba', NULL, NULL, 'BAIK', NULL, NULL, 1, '16001');
 
 -- --------------------------------------------------------
 
@@ -47,26 +63,26 @@ CREATE TABLE IF NOT EXISTS `barang` (
 --
 
 CREATE TABLE IF NOT EXISTS `jenis_barang` (
-  `JENIS_BARANG_ID` int(11) NOT NULL,
+  `JENIS_BARANG_ID` int(11) NOT NULL AUTO_INCREMENT,
   `JENIS_BARANG` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`JENIS_BARANG_ID`),
-  UNIQUE KEY `JENIS_BARANG` (`JENIS_BARANG`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`JENIS_BARANG_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `jenis_barang`
 --
 
 INSERT INTO `jenis_barang` (`JENIS_BARANG_ID`, `JENIS_BARANG`) VALUES
-(3, 'Dslr'),
-(7, 'Gitar'),
-(5, 'HandyCam'),
-(9, 'Jimbe'),
 (1, 'Laptop'),
-(8, 'MovieCam'),
-(6, 'PocketCam'),
+(2, 'Speaker'),
+(3, 'Dslr'),
 (4, 'Proyektor'),
-(2, 'Speaker');
+(5, 'HandCam'),
+(6, 'CamPocket'),
+(7, 'Gitar'),
+(8, 'MovieCam'),
+(9, 'Jimbe'),
+(16, 'Mixer');
 
 -- --------------------------------------------------------
 
@@ -98,7 +114,15 @@ CREATE TABLE IF NOT EXISTS `peminjam` (
   PRIMARY KEY (`PEMINJAM_ID`),
   KEY `FK_PEMINJAM_BARANG` (`BARANG_ID`),
   KEY `FK_USER_PEMINJAM` (`USER_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=706 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=503 ;
+
+--
+-- Dumping data for table `peminjam`
+--
+
+INSERT INTO `peminjam` (`PEMINJAM_ID`, `USER_ID`, `BARANG_ID`, `TANGGAL_PINJAM`, `TANGGAL_KEMBALI`) VALUES
+(101, 2, 21, '2015-03-11 10:29:27', '2015-03-11 10:29:48'),
+(502, 2, 22, '2015-03-12 10:17:28', '2015-03-15 21:08:01');
 
 -- --------------------------------------------------------
 
@@ -109,13 +133,25 @@ CREATE TABLE IF NOT EXISTS `peminjam` (
 CREATE TABLE IF NOT EXISTS `recent` (
   `RECENT_ID` int(11) NOT NULL AUTO_INCREMENT,
   `PEMINJAM_ID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
   `NAMA` varchar(100) DEFAULT NULL,
   `JENIS` varchar(50) DEFAULT NULL,
   `TANGGAL_PINJAM` datetime DEFAULT NULL,
   `TANGGAL_KEMBALI` datetime DEFAULT NULL,
   PRIMARY KEY (`RECENT_ID`),
-  KEY `FK_RECENT_PEMINJAM` (`PEMINJAM_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+  KEY `FK_RECENT_PEMINJAM` (`PEMINJAM_ID`),
+  KEY `FK_USER_RECENT` (`USER_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `recent`
+--
+
+INSERT INTO `recent` (`RECENT_ID`, `PEMINJAM_ID`, `USER_ID`, `NAMA`, `JENIS`, `TANGGAL_PINJAM`, `TANGGAL_KEMBALI`) VALUES
+(6, 101, 2, 'yadi muhammad r', '1', '2015-03-11 10:29:27', NULL),
+(7, 101, 2, 'yadi muhammad r', '1', NULL, '2015-03-11 10:29:48'),
+(8, 502, 2, 'yadi muhammad r', '5', '2015-03-12 10:17:28', NULL),
+(9, 502, 2, 'yadi muhammad r', '5', NULL, '2015-03-15 21:08:01');
 
 -- --------------------------------------------------------
 
@@ -137,19 +173,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `FOTO` varchar(500) DEFAULT NULL,
   `BACKGROUND` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`USER_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`USER_ID`, `USERNAME`, `PASSWORD`, `TIPE`, `NAMA`, `KELAS`, `JENIS_KELAMIN`, `NO_TELPON`, `ALAMAT`, `BANYAK_MEMINJAM`, `FOTO`, `BACKGROUND`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin', 'Program', 'laki-laki', '089667935047', 'Padalarang', NULL, NULL, NULL),
-(2, 'yadss', 'yadss', 'user', 'Yadi Muhammad R', 'XI RPL B', 'laki-laki', '', '', '5', '10440282_791497177608118_8428294090069473116_n.jpg', '#1BBC9B'),
-(3, 'ferday', 'ferday', 'user', 'Perdi Ferdiansyah', 'XI PEMASARAN B', 'laki-laki', '', '', '18', 'fap fap.png', '#1BBC9B'),
-(4, 'acus', 'acus', 'user', 'Hendi Agusti', 'XI AGRO B', 'laki-laki', '', '', '2', '21.jpg', '#1BBC9B'),
-(5, 'marjan', 'marjan', 'user', 'Marza Ayu Annisa', 'XI TKJ B', 'perempuan', '+62898989898989', 'Batujajar', '3', 'iykwim cewe.jpg', '#1BBC9B'),
-(6, 'user', 'user', 'user', 'ini user', 'user', 'laki-laki', '+62', '', '1', 'panji Ambalan copy.png', '#1BBC9B');
+(1, 'admin', 'admin', 'admin', 'admin', 'admin', 'laki-laki', '99999999', 'admin', NULL, NULL, NULL),
+(2, 'yadss', 'yadss', 'user', 'yadi muhammad r', 'XI RPL B', 'laki-laki', '', '', '5', '10440282_791497177608118_8428294090069473116_n.jpg', '#1BBC9B');
 
 --
 -- Constraints for dumped tables
@@ -178,7 +210,8 @@ ALTER TABLE `peminjam`
 -- Constraints for table `recent`
 --
 ALTER TABLE `recent`
-  ADD CONSTRAINT `FK_RECENT_PEMINJAM` FOREIGN KEY (`PEMINJAM_ID`) REFERENCES `peminjam` (`PEMINJAM_ID`);
+  ADD CONSTRAINT `FK_RECENT_PEMINJAM` FOREIGN KEY (`PEMINJAM_ID`) REFERENCES `peminjam` (`PEMINJAM_ID`),
+  ADD CONSTRAINT `FK_USER_RECENT` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`USER_ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
