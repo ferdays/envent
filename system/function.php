@@ -121,7 +121,7 @@ function list_pinjam($number){
         <center><h5 style='color:#333;'>$row[2]</h5></center>
         </td>
         <td>
-        <center><a href='../../system/system_pinjam.php?id=$row[0]'><button type='button' class='btn' style='background:#62C2E4;color:white;'>Pinjam</button></a> <a href='#detail?id=$row[0]' class='btn' style='background:#63CA82;color:white;'>Lihat Detail</a></center>
+        <center><a href='../../system/system_pinjam.php?id=$row[0]'><button type='button' class='btn' style='background:#62C2E4;color:white;'>Pinjam</button></a> </center>
         </td>
     </tr>
 	";
@@ -139,7 +139,7 @@ function list_pinjam_lain(){
         <center><h5 style='color:#333;'>$row[11]</h5></center>
         </td>
         <td>
-        <center><a href='../../system/system_pinjam.php?id=$row[0]'><button type='button' class='btn' style='background:#62C2E4;color:white;'>Pinjam</button></a> <a href='#detail' class='btn' style='background:#63CA82;color:white;'>Lihat Detail</a></center>
+        <center><a href='../../system/system_pinjam.php?id=$row[0]'><button type='button' class='btn' style='background:#62C2E4;color:white;'>Pinjam</button></a> </center>
         </td>
     </tr>
 	";
