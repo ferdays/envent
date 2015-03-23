@@ -12,6 +12,7 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
 </head>
 
 <body style='background:#3333;'>
@@ -25,6 +26,11 @@ require('system/function.php');
       	<img src='img/thumb.png' height='50px'>
       </a>
     </div>
+    <div class='pull-right'>
+        <a href='#page3' class='btn' style='background:#E86256;color:white;margin:10px;'>
+            List Barang
+        </a>
+    </div>
   </div>
 </div>
 
@@ -32,7 +38,7 @@ require('system/function.php');
 	<center><img src='img/logo.png' style='margin-top:150px;'>
 		<h3 style='margin-top:40px;'> Aplikasi Inventaris Sekolah </h3>
 		<br>
-		<h4> Kamu siswa smk4 ? mau minjem peralatan buat dikelas ? daftar disini </h4>
+		<h4> Kamu siswa smk4 ? mau minjem peralatan buat dikelas ? Masuk disini </h4>
 		<br>
 		<div class="main">
             <div class="panel">
@@ -91,87 +97,33 @@ require('system/function.php');
 	<center><h1>Live Statistic</h1>
 	<hr style='width:100px;border:1px solid white;'>
 	<div class='container'>
-	<div class="col-md-4">
-    <div style="height:50%; width:100%; background-color:#333; opacity:0.8;">
-    	<br>
-    	<img src="img/thumb.png" class='img-responsive'>
-    	<img src="img/logo.png" height='100'>
+    <div class='wadahtabel'>
+    <table class="table table-hover" style='color:white;'>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Kode Barang</th>
+            <th>Nama Barang</th>
+            <th>Status</th>
+            <th>Kondisi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1003</td>
+            <td>Laptop Lenovo</td>
+            <td><span class="label label-success">Bisa Dipinjam</span> <!-- <span class="label label-danger">Tidak Bisa Dipinjam</span> --></td>
+            <td><span class="label label-info">Baik</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    </div>
-    <div class='col-md-3' style='border:1px solid white;border-radius:10px;margin-left:10px;'>
-    <h1><?php jumlah(1); ?></h1>
-        <p><?php nama_brg(1); ?></p>
-    </div>
-    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;'>
-    <h1><?php jumlah(2); ?></h1>
-        <p><?php nama_brg(2); ?></p>
-    </div>
-    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;'>
-    <h1><?php jumlah(3); ?></h1>
-        <p><?php nama_brg(3); ?></p>
-    </div>
-    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah(4); ?></h1>
-        <p><?php nama_brg(4); ?></p>
-    </div>
-    <div class='col-md-3' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah(5); ?></h1>
-        <p><?php nama_brg(5); ?></p>
-    </div>
-    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah(6); ?></h1>
-        <p><?php nama_brg(6); ?></p>
-    </div>
-    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah(7); ?></h1>
-        <p><?php nama_brg(7); ?></p>
-    </div>
-    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah(8); ?></h1>
-        <p><?php nama_brg(8); ?></p>
-    </div>
-    <div class='col-md-1' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah(9); ?></h1>
-        <p><?php nama_brg(9); ?></p>
-    </div>
-    <a href="#lainnya" id="login_pop">
-    <div class='col-md-2' style='border:1px solid white;border-radius:10px;margin-left:10px;margin-top:10px;'>
-    <h1><?php jumlah_lain(); ?></h1>
-        <p>Lainnya</p>
-    </div>
-    </a>
-    <div class='col-md-7' style='margin-top:20px;'>
-	<p>Syarat dan ketentuan berlaku <a href='#'><span class='glyphicon glyphicon-question-sign'></span></a></p> 
-	</div>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<h5> Made with love by Cowoteam </h5>
-
-    <!-- Popup Lainnya -->
-    <a href="#x" class="overlay" id="lainnya"></a>
-            <div class="popup">
-            <form class="sign-up" style='width:700px;'>
-                <h1 class="sign-up-title" style='color:#F0776C;'>Barang Lainnya</h1>
-                <table width='100%'>
-                    <tr>
-
-                        <td width='30%'>
-                            <center><h4 style='color:#333;'>Nama Barang</h4></center>
-                        </td>
-
-                        <td width='30%'>
-                            <center><h4 style='color:#333;'>Kode Barang</h4></center>
-                        </td>
-                        <td width='30%'>
-                            <center><h4 style='color:#333;'>Merk Barang</h4></center>
-                        </td>
-                    </tr>               
-                    
-                    <?php list_lainnya(); ?>
-
-                </table>
-            </form>
-            </div>
-    <!-- Akhir Popup -->
+    <a href="#0" class="cd-top">Top</a>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/main.js"></script> <!-- Gem jQuery -->
+    </div>
 </div>
 </body>
 </html>
