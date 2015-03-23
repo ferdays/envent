@@ -140,7 +140,7 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 		                <div class="progress-bar"></div>
 		            </div>
 		            <a class="smpl-step-icon"><i class="glyphicon glyphicon-pencil" style="font-size: 30px; padding-left:20px; padding-top: 20px; color: white;"></i></a>
-		            <div class="smpl-step-info text-center col-md-offset-2">Isi form yang tersedia di web ini</div>
+		            <div class="smpl-step-info text-center col-md-offset-2">Tekan tombol Kembalikan</div>
 		        </div>
 		        <div class="col-xs-3 smpl-step-step active">          
 		            <div class="text-center smpl-step-num">Step 3</div>
@@ -151,31 +151,18 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 		            <div class="smpl-step-info text-center col-md-offset-2">Selesai</div>
 	        	</div>
     		</div>
-    		<h3 style='color:#333;'>Yuk isi datanya</h3>
+    		<h3 style='color:#333;'>Barang yang sedang anda pinjam</h3>
 			<hr style='width:300px;border:1px solid #d4d4d4;margin-top:-2px;' class='pull-left'>
 			<br>
-			<!-- <div class="alert alert-danger" role='alert'>
-			    <strong>Error!</strong> A problem has been occurred while submitting your data. Please try again
+			<div class='col-md-4 sedangpinjam'>
+				<h1 class='text-center' style='color:white;'>Laptop</h1>
+				<h4 class='text-center' style='color:white;'>Lenovo</h4>
+				<h6 class='text-center' style='color:white;'>ID : 103</h6>
+				<center><button class='btn' style='background:white;color:#333;'>Kembalikan</button></center>
 			</div>
-			<div class="alert alert-success" role='alert'>
-			    <strong>Success</strong>
 			</div>
-			-->
-			
-			<form method='POST' action="../../system/kembali.php">
-				<div class="input-group">
-				  <span class="input-group-addon glyphicon glyphicon-hand-right" id="basic-addon1"></span>
-				  <input name="id_peminjam" type="text" class="form-control" placeholder="ID Peminjaman" aria-describedby="basic-addon1" required>
-				</div>
-				<br>
-				 <center><button type="submit" class="btn btn-success">Kembalikan</button></center>
-			</form>
-    		
-
-    		<center><img src="../../img/thumb-footer.png" height='50' style='margin-top:50px;'>
-			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
-			</center>
-		</div>
+		<BR>
+			.
 
 		           <!-- Keterangan Kembali -->
 <?php 

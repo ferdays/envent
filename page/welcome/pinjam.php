@@ -36,6 +36,10 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
     <script src="../../js/modernizr.js"></script> <!-- Modernizr -->
 </head>
 <body style='background:<?php tampilbackground(); ?>;'>
+<a href="#semua" id="login_pop"><div style='box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);display:inline-block;width:150px;color:white;padding:20px;height:auto;position:fixed;background:#4390DF;bottom:30px;right:20px;'>
+    <center>Lihat Semua Data Barang</center>
+</div>
+</a>
 <div class="navbar">
       <center><img src='../../img/logo.png' height='60px'><a href="#help" id="login_pop"><span class='glyphicon glyphicon-question-sign'></span></a></center>
 </div>
@@ -169,7 +173,7 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 				<center>
 					<h1 style='color:white;'><?php jumlah(6) ?></h1>
 					<h3><?php nama_brg(6); ?></h3>
-				</center>
+    				</center>
 			</div>
 			</a>
 			<a href="#<?php nama_brg(7); ?>" id="login_pop">
@@ -450,7 +454,37 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
             </form>
             </div>
         <!-- Akhir Pop Up 10 -->
-
+        <!-- Pop Up semua -->
+        <a href="#x" class="overlay" id="semua"></a>
+            <div class="popup" style='height:750px;'>
+            <form class="sign-up" style='width:700px;height:640px;max-height:640px;overflow:auto;'>
+                <h1 class="sign-up-title" style='color:#F0776C;'>Semua Barang</h1>
+                <table width='100%'>
+                    <tr>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Kode Barang</h4></center>
+                        </td>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Nama Barang</h4></center>
+                        </td>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Status</h4></center>
+                        </td>
+                        <td width='30%'>
+                            <center><h4 style='color:#333;'>Kondisi</h4></center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><center>1003</center></td>
+                        <td><center>Laptop Lenovo</center></td>
+                        <td><center><span class="label label-success">Ada</span></center></td>
+                        <td><center><span class="label label-info">Baik</span></center></td>
+                        <br>
+                    </tr>
+                </table>
+            </form>
+            </div>
+        <!-- Akhir Pop Up semua -->
 
 <!-- Keterangann -->
        
