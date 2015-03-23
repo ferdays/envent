@@ -273,7 +273,7 @@ $tampil = mysql_query("SELECT * FROM user WHERE tipe = 'user'");
           <h4 style='color:black;'>$row[4]</h5>
         </td>
         <td>
-          <span class='glyphicon glyphicon-edit' style='color:grey;'></span>
+          <a href='edit.php' class='glyphicon glyphicon-edit' style='color:grey;'></a>
           &nbsp; &nbsp;
           <a href='../../system/deleteuser.php?id=$row[0]'><span class='glyphicon glyphicon-remove' style='color:red;'></span></a>
         </td>
@@ -374,7 +374,7 @@ while($row=mysql_fetch_row($tampil))
         	$row[9]
         	</td>
         	<td>
-          			<span class='glyphicon glyphicon-edit' style='color:grey;'></span>
+          			<a href='editbarang.php' class='glyphicon glyphicon-edit' style='color:grey;'></a>
           			&nbsp; &nbsp;
           			<a href='../../system/deletebrg.php?id=$row[0]'> <span class='glyphicon glyphicon-remove' style='color:red;'></span></a>
         	</td>
