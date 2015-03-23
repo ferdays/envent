@@ -37,14 +37,6 @@ if($_SESSION['TIPE']!="admin"){
     <center><img src="../../img/logo2.png" style='max-height:80px;' class='img-responsive'></center>
   </div>
     <div class='col-md-10' style='padding:10px;background:white;'>
-      <div class='col-md-4'>
-        <div class="input-group" style='margin-top:15px;'>
-          <input type="text" class="form-control" placeholder="Search..." style='border:none;box-shadow:none;'>
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button" style='background:transparent;border:none;box-shadow:none;'><p class='glyphicon glyphicon-search' style='color:grey;'></p></button>
-          </span>
-        </div>
-      </div>
       <div class='col-md-3 pull-right'>
         <img src='../profil/img/profil.jpg' height='60' width='60' style='border-radius:50%;' class='pull-left col-md-offset-2'>
         <div class="dropdown" style='margin-top:10px;'>

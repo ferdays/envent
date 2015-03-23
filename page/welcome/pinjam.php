@@ -450,9 +450,12 @@ if(!empty($_GET['pinjam']))
 {
        if($_GET['pinjam'] == 'sukses')
         {
-            echo "<script language=\"Javascript\">\n";
-            echo "confirmed = window.alert('Barang Berhasil di pinjam! Jaga baik baik yah ;)');";
-            echo "</script>";
+            $tampil = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID WHERE brg.BARANG_ID='".$id_brg."' ");
+            echo "<div id='suksespinjam'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='pinjam.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Anda berhasil meminjam barang, ID peminjaman anda adalah" .$id_peminjam. "</p>
+                </div>";
         }
         else
         {

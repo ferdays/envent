@@ -174,21 +174,27 @@ if(!empty($_GET['kembali']))
 {
        if($_GET['kembali'] == 'sukses')
        {
-            echo "<script language=\"Javascript\">\n";
-            echo "confirmed = window.alert('Barang berhasil di Kembalikan! ;)');";
-            echo "</script>";
+            echo "<div id='suksespinjam'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='kembali.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Anda berhasil mengembalikan barang </p>
+                </div>";
        }
        else if($_GET['kembali'] == 'gagal')
         {
-            echo "<script language=\"Javascript\">\n";
-            echo "window.alert('Barang Tidak Berhasil di kembalikan, Coba yakin itu memang Id Peminjaman anda?');";
-            echo "</script>";
+            echo "<div id='suksespinjam' style='background:red;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='kembali.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Gagal mengembalikan barang, ID yang anda masukkan salah </p>
+                </div>";
         }
         else if($_GET['kembali'] == 'sudah')
         {
-            echo "<script language=\"Javascript\">\n";
-            echo "window.alert('Barang Sudah dikembalikan! Yakin yang anda masukan memang Id Peminjam anda?');";
-            echo "</script>";
+            echo "<div id='suksespinjam' style='background:red;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='kembali.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Barang telah dikembalikan, Apakah ID Yang anda masukkan sudah benar ? </p>
+                </div>";
         }
 }
 ?>

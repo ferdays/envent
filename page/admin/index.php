@@ -258,15 +258,19 @@ if(!empty($_GET['tambah']))
 {
        if($_GET['tambah'] == '1')
         {
-            echo "<script language=\"Javascript\">\n";
-            echo "confirmed = window.alert('Sukses menginput data!');";
-            echo "</script>";
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='index.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Sukses menambah data </p>
+                </div>";
         }
         else
         {
-            echo "<script language=\"Javascript\">\n";
-            echo "window.alert('Gagal mengiput data!');";
-            echo "</script>";
+            echo "<div id='suksespinjam' style='background:red;top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='index.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Gagal menambah barang </p>
+                </div>";
         }
 }
 ?>           
@@ -282,9 +286,11 @@ if(!empty($_GET['delete']))
        }
        else if($_GET['delete'] == '2')
         {
-            echo "<script language=\"Javascript\">\n";
-            echo "window.alert('deleted');";
-            echo "</script>";
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='index.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Barang berhasil dihapus </p>
+                </div>";
         }
 }
 ?>

@@ -37,14 +37,6 @@ if($_SESSION['TIPE']!="admin"){
     <center><img src="../../img/logo2.png" style='max-height:80px;' class='img-responsive'></center>
   </div>
     <div class='col-md-10' style='padding:10px;background:white;'>
-      <div class='col-md-4'>
-        <div class="input-group" style='margin-top:15px;'>
-          <input type="text" class="form-control" placeholder="Search..." style='border:none;box-shadow:none;'>
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button" style='background:transparent;border:none;box-shadow:none;'><p class='glyphicon glyphicon-search' style='color:grey;'></p></button>
-          </span>
-        </div>
-      </div>
       <div class='col-md-3 pull-right'>
         <img src='../profil/img/profil.jpg' height='60' width='60' style='border-radius:50%;' class='pull-left col-md-offset-2'>
         <div class="dropdown" style='margin-top:10px;'>
@@ -233,5 +225,47 @@ if($_SESSION['TIPE']!="admin"){
 <a href="#0" class="cd-top">Top</a>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../../js/main.js"></script> <!-- Gem jQuery -->
+<?php 
+if(!empty($_GET['tambah']))
+{
+       if($_GET['tambah'] == '1')
+        {
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Sukses menambah data </p>
+                </div>";
+        }
+        else
+        {
+            echo "<div id='suksespinjam' style='background:red;top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Gagal menambah barang </p>
+                </div>";
+        }
+}
+?>
+<?php 
+if(!empty($_GET['delete']))
+{
+       if($_GET['delete'] == '1')
+       {
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>User berhasil dihapus </p>
+                </div>";
+       }
+       else if($_GET['delete'] == '2')
+        {
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>User berhasil dihapus </p>
+                </div>";
+        }
+}
+?>
 </body>
 </html>
