@@ -2,14 +2,14 @@
 ____________________________________________|____________________________________
 1. ALur 									| (ppt)					| 
 2. Teknologi yang di gunakan(software)		| (ppt)					|
-3. Pemberitahuan							| (frontend)			|
+3. Pemberitahuan							| (frontend)			|	DONE
 4. Manual									| (analiyst)			|
 5. Bukti pinjam kembali (scan barcode :v)	| (frontend,backend)	|
 6. status barang : ada | dipinjam | Rusak	| (frontend,backend)	|
 7. Peraturan								| (analyst)				|	DONE
 9. user > data barang						| (frontend,backend)	|
 10. data unik : Username					| (backend)				|	DONE
-11. list detail.							| (frontend,backend)	|	
+11. list detail.							| (frontend,backend)	|	DONE
 12. Screenschot aplikasi					| (team)				|
 13. edit barang								| (Frontend, backend)	|
 14. Kategori bisa di pinjam/tidak			| (Frontend, Backend)	|	DONE

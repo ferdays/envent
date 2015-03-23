@@ -39,7 +39,7 @@ if($sql){
 	//update tabel Recent
 		$tampil = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID WHERE brg.BARANG_ID='".$id_brg."' ");
 		$row=mysql_fetch_row($tampil);
-		$jenis = $row[10];
+		$jenis = $row[8];
 		$nama = $data_user['NAMA'];
 		mysql_query("INSERT INTO recent(PEMINJAM_ID,USER_ID,NAMA,JENIS,TANGGAL_PINJAM) values( '".$id_peminjam."', '".$user_id."', '".$nama."', '".$jenis."', now() ) ");
 	

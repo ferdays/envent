@@ -1,6 +1,23 @@
 <?php
 include('connect.php');
 
+//function di index
+
+function list_index(){
+	$sql_list = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID");
+
+	while($row=mysql_fetch_row($sql_list)){
+	echo " 
+	<tr>
+            <td>1</td>
+            <td>$row[7]</td>
+            <td>$row[9] $row[2]</td>
+            <td><span class='label label-success'>$row[10] Dipinjam</span> <!-- <span class='label label-danger'>Tidak Bisa Dipinjam</span> --></td>
+            <td><span class='label label-info'>$row[4]</span></td>
+          </tr>
+	";
+}
+}
 function jumlah_lain(){
 	$sql_lebih = mysql_query("SELECT SUM(jumlah) AS total_item FROM barang WHERE JENIS_BARANG_ID > 9 ");
 		//$hitungan = mysql_num_rows($sql_lebih);
@@ -115,7 +132,7 @@ function list_pinjam($number){
 	echo "
 	<tr>
     	<td>
-    	<center><h5 style='color:#333;'>$row[9]</h5></center>
+    	<center><h5 style='color:#333;'>$row[7]</h5></center>
     	</td>
         <td>
         <center><h5 style='color:#333;'>$row[2]</h5></center>
@@ -133,10 +150,10 @@ function list_pinjam_lain(){
 	echo "
 	<tr>
     	<td>
-    	<center><h5 style='color:#333;'>$row[9]</h5></center>
+    	<center><h5 style='color:#333;'>$row[7]</h5></center>
     	</td>
         <td>
-        <center><h5 style='color:#333;'>$row[11]</h5></center>
+        <center><h5 style='color:#333;'>$row[9] $row[2]</h5></center>
         </td>
         <td>
         <center><a href='../../system/system_pinjam.php?id=$row[0]'><button type='button' class='btn' style='background:#62C2E4;color:white;'>Pinjam</button></a> </center>

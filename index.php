@@ -119,13 +119,9 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>1003</td>
-            <td>Laptop Lenovo</td>
-            <td><span class="label label-success">Bisa Dipinjam</span> <!-- <span class="label label-danger">Tidak Bisa Dipinjam</span> --></td>
-            <td><span class="label label-info">Baik</span></td>
-          </tr>
+          
+          <?php list_index(); ?>
+
         </tbody>
       </table>
     </div>

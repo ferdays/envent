@@ -658,3 +658,15 @@ input {
     bottom: 30px;
   }
 }
+.wadahtabel {
+  max-height: 800px;
+  overflow: auto;
+}
+#suksespinjam {
+  width: 400px;
+  height: 80px;
+  background:#FFB848;
+  position: fixed;
+  top: 50px;
+  right: 10px;
+}
