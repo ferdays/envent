@@ -173,6 +173,26 @@ if($_SESSION['TIPE']!="admin"){
         </div>
         </td>
       </tr>
+      <tr>
+        <td>
+          Foto Barang
+        </td>
+        <td>
+          <div class="input-group">
+          <input type="file" name="fotobarang" class="form-control" style='border:none;box-shadow:none;'>
+        </div>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          Nota Barang
+        </td>
+        <td>
+          <div class="input-group">
+          <input type="file" name="fotobarang" class="form-control" style='border:none;box-shadow:none;'>
+        </div>
+        </td>
+      </tr>
     </table>
 
     <button type='submit' class='btn pull-right' style='background:#FFB848;color:white;'>Kirim</button>
