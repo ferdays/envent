@@ -45,6 +45,7 @@ if($sql){
 	
 		echo "Anda Berhasil Meminjam Barang, Saat mengembalika diperlukan PEMINJAMAN_ID, Di saran kan untuk mencatat Peminjaman ID anda : '".$id_peminjam."' ";
 		echo "<a href='../page/welcome/pinjam.php?pinjam=sukses'>OKE</a>";
+		header('location:../page/welcome/pinjam.php?pinjam=sukses');
 		}
 
 }

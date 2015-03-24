@@ -474,13 +474,9 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
                             <center><h4 style='color:#333;'>Kondisi</h4></center>
                         </td>
                     </tr>
-                    <tr>
-                        <td><center>1003</center></td>
-                        <td><center>Laptop Lenovo</center></td>
-                        <td><center><span class="label label-success">Ada</span></center></td>
-                        <td><center><span class="label label-info">Baik</span></center></td>
-                        <br>
-                    </tr>
+                    
+                    <?php list_semua_pinjam(); ?>
+
                 </table>
             </form>
             </div>

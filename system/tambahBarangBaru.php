@@ -22,5 +22,5 @@ $kode_barang = "".$jenis_data."00".$jumlah_jenis."";
 	$tambah_barang = mysql_query("INSERT INTO barang(JENIS_BARANG_ID, MERK_BARANG, KONDISI, KODE_BARANG) VALUES( '".$jenis_data."', '".$merk."', 'BAIK', '".$kode_barang."' ) ");
 
 }
-
+header('location:../page/admin/index.php?tambah=1')
 ?>

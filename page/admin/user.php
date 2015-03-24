@@ -163,6 +163,16 @@ if($_SESSION['TIPE']!="admin"){
         </td>
       </tr>
       <tr>
+        <td width='100'>
+          NIS
+        </td>
+        <td>
+          <div class="input-group">
+          <input type="text" name="NIS" class="form-control" placeholder="NIS ..." style='border:none;box-shadow:none;'required>
+        </div>
+        </td>
+      </tr>
+      <tr>
         <td>
           Jenis Kelamin
         </td>

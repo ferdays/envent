@@ -220,17 +220,27 @@ if($_SESSION['TIPE']!="admin"){
 
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-book'></i> List Barang</h2>
   </div>
-  <div class="panel-body" style='background:white;border:1px solid #14B9D6;border-top:none;max-height:250px;overflow:auto;'>
+  <div class="panel-body" style='background:white;border:1px solid #14B9D6;border-top:none;max-height:500px;overflow:auto;'>
     <table width='100%' border='1' style='text-align:center;border:1px solid #C0C6C2;'>
       <tr>
+  
         <td>
-          <h4 style='color:black;'>Nama</h4>
+          <h4 style='color:black;'>Jenis</h4>
         </td>
         <td>
           <h4 style='color:black;'>Merk</h4>
         </td>
         <td>
           <h4 style='color:black;'>Kode Barang</h4>
+        </td>
+        <td>
+          <h4 style='color:black;'>Kondisi</h4>
+        </td>
+        <td>
+          <h4 style='color:black;'>Status</h4>
+        </td>
+        <td>
+          <h4 style='color:black;'>ket</h4>
         </td>
         <td>
           <h4 style='color:black;'>Aksi</h4>

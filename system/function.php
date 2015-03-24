@@ -162,6 +162,27 @@ function list_pinjam_lain(){
 	";
 	}
 }
+function list_semua_pinjam(){
+		$sql_list = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID");
+
+	while($row=mysql_fetch_row($sql_list)){
+		if($row[6] == 1){
+			$status = 'Tersedia';
+		}
+		else{
+			$status = 'Dipinjam';
+		}
+	echo "
+	<tr>
+                        <td><center>$row[7]</center></td>
+                        <td><center>$row[9] $row[2]</center></td>
+                        <td><center><span class='label label-success'>$status</span></center></td>
+                        <td><center><span class='label label-info'>$row[4]</span></center></td>
+                        <br>
+                    </tr>
+	";
+}
+}
 function recent_activites(){
 	$peminjam_list = mysql_query("SELECT *FROM recent");
 	while($row=mysql_fetch_row($peminjam_list)){
@@ -309,9 +330,8 @@ function jumlah_komen(){
 	echo $saran;
 }
 function jumlah_barang(){
-	$total = mysql_query("SELECT SUM(JUMLAH) AS total_item FROM barang");
-	$hasil = mysql_fetch_array($total);
-	$output = number_format($hasil['total_item']);
+	$total = mysql_query("SELECT *FROM barang");
+	$output = mysql_num_rows($total);
 	echo $output;
 }
 function jumlah_admin(){
@@ -379,17 +399,37 @@ function list_barang()
 $tampil = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID ");
 while($row=mysql_fetch_row($tampil))
 {
+	$barang = mysql_query("SELECT *FROM barang");
+$data = mysql_fetch_array($barang);
+
+	if($row[6] == 1){
+		$status = 'Tersedia';
+	}
+	else{
+		$status = 'Di pinjam';
+	}
+
 	echo " 
 			<tr>
+ 
     	    <td>
-			$row[11]        
+			$row[9]        
         	</td>
         	<td>
-        	$row[2]
+			$row[2]        
         	</td>
         	<td>
-        	$row[9]
+        	$row[7]
         	</td>
+        	<td>
+        	$row[4]
+        	</td>
+        	<td>
+          <h4 style='color:black;'>$status</h4>
+        </td>
+        <td>
+          <h4 style='color:black;'>$row[10] dipinjam</h4>
+        </td>
         	<td>
           			<a href='editbarang.php' class='glyphicon glyphicon-edit' style='color:grey;'></a>
           			&nbsp; &nbsp;
@@ -397,6 +437,7 @@ while($row=mysql_fetch_row($tampil))
         	</td>
       		</tr>
       	 ";
+      
 }
 
 }
