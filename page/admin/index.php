@@ -45,7 +45,10 @@ if($_SESSION['TIPE']!="admin"){
         <input name="jenis_barang" type="text" class="sign-up-input" placeholder="Nama barang" required>
         <input name="nama_barang" type="text" class="sign-up-input" placeholder="Merk" required>
         <input name="jumlah" type="number" class="sign-up-input" placeholder="Jumlah" required>
-        
+        <font style='font-size:20px;color:#9D9D9D;'>Foto Barang</font> <input type='file'>
+        <br>
+        <font style='font-size:20px;color:#9D9D9D;'>Nota Barang</font> <input type='file'>
+        <br>
         <input type="submit" value="Kirim" class="sign-up-button">
       </form>
 
