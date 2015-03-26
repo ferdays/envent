@@ -154,12 +154,9 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
     		<h3 style='color:#333;'>Barang yang sedang anda pinjam</h3>
 			<hr style='width:300px;border:1px solid #d4d4d4;margin-top:-2px;' class='pull-left'>
 			<br>
-			<div class='col-md-4 sedangpinjam'>
-				<h1 class='text-center' style='color:white;'>Laptop</h1>
-				<h4 class='text-center' style='color:white;'>Lenovo</h4>
-				<h6 class='text-center' style='color:white;'>ID : 103</h6>
-				<center><button class='btn' style='background:white;color:#333;'>Kembalikan</button></center>
-			</div>
+
+			<?php yang_dipinjam(); ?>
+
 			</div>
 		<BR>
 			.

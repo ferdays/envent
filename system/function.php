@@ -28,6 +28,40 @@ function jumlah_lain(){
 }
 
 // Fungsi Tampil User
+
+
+function yang_dipinjam(){
+
+$id = $_SESSION['USER_ID'];
+
+$sql = mysql_query("SELECT *FROM peminjam WHERE USER_ID='".$id."'");
+while($row = mysql_fetch_row($sql)){
+
+if($row[4]=='0000-00-00 00:00:00'){
+
+$sql_merk = mysql_query("SELECT *FROM barang WHERE BARANG_ID=$row[2]");
+$data_merk = mysql_fetch_array($sql_merk);
+$merk = $data_merk['MERK_BARANG'];
+$jenis = $data_merk['JENIS_BARANG_ID'];
+
+$sql_nama = mysql_query("SELECT *FROM jenis_barang WHERE JENIS_BARANG_ID='".$jenis."' ");
+$data_nama = mysql_fetch_array($sql_nama);
+$nama = $data_nama['JENIS_BARANG'];
+
+	echo "
+			<div class='col-md-4 sedangpinjam'>
+			<form method='post' action='../../system/kembali.php'>	
+				<input type='hidden' name='nama' value='$nama'><h1 class='text-center' style='color:white;'>$nama</h1>
+				<input type='hidden' name='merk' value='$merk'><h4 class='text-center' style='color:white;'>$merk</h4>
+				<input type='hidden' name='id' value='$row[0]'><h6 class='text-center' style='color:white;'>ID : $row[0]</h6>
+				<center><input type='submit' class='btn' style='background:white;color:#333;' name='submit' value='Kembalikan'></center>
+			</form>
+			</div>
+	";
+	}
+}
+}
+
 function list_lainnya(){
  	$list_lain = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID WHERE jns.JENIS_BARANG_ID > 9 ");
 	while($row=mysql_fetch_row($list_lain)){
@@ -172,6 +206,9 @@ function list_semua_pinjam(){
 		else{
 			$status = 'Dipinjam';
 		}
+
+if($row[10]=='Bisa'){
+
 	echo "
 	<tr>
                         <td><center>$row[7]</center></td>
@@ -181,6 +218,8 @@ function list_semua_pinjam(){
                         <br>
                     </tr>
 	";
+	}
+
 }
 }
 function recent_activites(){
@@ -311,7 +350,13 @@ $tampil = mysql_query("SELECT * FROM user WHERE tipe = 'user'");
           <h4 style='color:black;'>$row[4]</h5>
         </td>
         <td>
-          <a href='edit.php' class='glyphicon glyphicon-edit' style='color:grey;'></a>
+          <h4 style='color:black;'>$row[5]</h5>
+        </td>
+        <td>
+          <h4 style='color:black;'>$row[7]</h5>
+        </td>
+        <td>
+          <a href='edit.php?id=$row[0]' class='glyphicon glyphicon-edit' style='color:grey;'></a>
           &nbsp; &nbsp;
           <a href='../../system/deleteuser.php?id=$row[0]'><span class='glyphicon glyphicon-remove' style='color:red;'></span></a>
         </td>
@@ -431,7 +476,7 @@ $data = mysql_fetch_array($barang);
           <h4 style='color:black;'>$row[10] dipinjam</h4>
         </td>
         	<td>
-          			<a href='editbarang.php' class='glyphicon glyphicon-edit' style='color:grey;'></a>
+          			<a href='editbarang.php?id=$row[0]' class='glyphicon glyphicon-edit' style='color:grey;'></a>
           			&nbsp; &nbsp;
           			<a href='../../system/deletebrg.php?id=$row[0]'> <span class='glyphicon glyphicon-remove' style='color:red;'></span></a>
         	</td>

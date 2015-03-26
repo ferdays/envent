@@ -39,15 +39,16 @@ if($_SESSION['TIPE']!="admin"){
         <a href="#x" class="overlay" id="tambah_form"></a>
         <div class="popup">
             
-            <form method="POST" action="../../system/tambahBarangBaru.php" class="sign-up">
+            <form method="POST" action="../../system/tambahBarangBaru.php" class="sign-up" enctype="multipart/form-data" >
         <h1 class="sign-up-title" style='color:#F0776C;'>Tambah barang baru</h1>
         
         <input name="jenis_barang" type="text" class="sign-up-input" placeholder="Nama barang" required>
         <input name="nama_barang" type="text" class="sign-up-input" placeholder="Merk" required>
         <input name="jumlah" type="number" class="sign-up-input" placeholder="Jumlah" required>
-        <font style='font-size:20px;color:#9D9D9D;'>Foto Barang</font> <input type='file'>
+        <font style='font-size:20px;color:#9D9D9D;'>Foto Barang</font> <input type='file' name="fotobarang" id="fotobarang">
         <br>
-        <font style='font-size:20px;color:#9D9D9D;'>Nota Barang</font> <input type='file'>
+        <input type="radio" name="status" value="Bisa"> Bisa di Pinjam <br>
+        <input type="radio" name="status" value="Tidak bisa"> Tidak Bisa di Pinjam <br>
         <br>
         <input type="submit" value="Kirim" class="sign-up-button">
       </form>
@@ -138,7 +139,7 @@ if($_SESSION['TIPE']!="admin"){
   </div>
   <div class="panel-body" style='background:white;border:1px solid #FFB848;border-top:none;'>
   
-  <form method="post" action="../../system/tambahBarang.php">
+  <form method="post" action="../../system/tambahBarang.php" enctype="multipart/form-data">
       <table width='100%'>
       <tr>
            <td width='100'>
@@ -182,21 +183,11 @@ if($_SESSION['TIPE']!="admin"){
         </td>
         <td>
           <div class="input-group">
-          <input type="file" name="fotobarang" class="form-control" style='border:none;box-shadow:none;'>
+          <input type="file" name="fotobarang" id="fotobarang" class="form-control" style='border:none;box-shadow:none;'>
         </div>
         </td>
       </tr>
-            <tr>
-        <td>
-          Nota Barang
-        </td>
-        <td>
-          <div class="input-group">
-          <input type="file" name="fotobarang" class="form-control" style='border:none;box-shadow:none;'>
-        </div>
-        </td>
-      </tr>
-    </table>
+        </table>
 
     <button type='submit' class='btn pull-right' style='background:#FFB848;color:white;'>Kirim</button>
   </div>
@@ -216,7 +207,7 @@ if($_SESSION['TIPE']!="admin"){
           <h4 style='color:black;'>ID</h4>
         </td>
         <td>
-          <h4 style='color:black;'>Nama</h4>
+          <h4 style='color:black;'>UserName</h4>
         </td>
         <td>
           <h4 style='color:black;'>Kelas</h4>
@@ -243,7 +234,7 @@ if($_SESSION['TIPE']!="admin"){
 
     <h2 class="panel-title" style='color:white;font-size:20px;'><i class='glyphicon glyphicon-book'></i> List Barang</h2>
   </div>
-  <div class="panel-body" style='background:white;border:1px solid #14B9D6;border-top:none;max-height:500px;overflow:auto;'>
+  <div class="panel-body" style='background:white;border:1px solid #14B9D6;border-top:none;max-height:400px;overflow:auto;'>
     <table width='100%' border='1' style='text-align:center;border:1px solid #C0C6C2;'>
       <tr>
   
@@ -327,6 +318,29 @@ if(!empty($_GET['delete']))
         }
 }
 ?>
+        <!-- Keterangan Edit -->
+        <?php 
+if(!empty($_GET['edit']))
+{
+       if($_GET['edit'] == '1')
+        {
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='index.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Data berhasil di edit</p>
+                </div>";
+        }
+        else
+        {
+            echo "<div id='suksespinjam' style='background:red;top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='index.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Gagal melakukan edit data </p>
+                </div>";
+        }
+}
+?>
+
 <a href="#0" class="cd-top">Top</a>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../../js/main.js"></script> <!-- Gem jQuery -->

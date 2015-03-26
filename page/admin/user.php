@@ -213,6 +213,12 @@ if($_SESSION['TIPE']!="admin"){
           <h4 style='color:black;'>Nama</h4>
         </td>
         <td>
+          <h4 style='color:black;'>kelas</h4>
+        </td>
+        <td>
+          <h4 style='color:black;'>NIS</h4>
+        </td>
+        <td>
           <h4 style='color:black;'>Aksi</h4>
         </td>
       </tr>
@@ -273,6 +279,28 @@ if(!empty($_GET['delete']))
                     <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
                     <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
                     <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>User berhasil dihapus </p>
+                </div>";
+        }
+}
+//ket edit user
+?>
+<?php 
+if(!empty($_GET['edit']))
+{
+       if($_GET['edit'] == '1')
+       {
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>User berhasil di edit</p>
+                </div>";
+       }
+       else 
+        {
+            echo "<div id='suksespinjam' style='top:100px;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>User gagl di edit </p>
                 </div>";
         }
 }

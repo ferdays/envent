@@ -2,23 +2,18 @@
 include('connect.php');
  session_start();
 
+$id = $_POST['id'];
 $user_id = $_SESSION['USER_ID'];
-$id_peminjam = $_POST['id_peminjam'];
 
-echo $user_id;
-echo "<br/>";
-echo $id_peminjam;
-echo "<br/>";
-
-$sql= "SELECT *FROM peminjam WHERE PEMINJAM_ID='".$id_peminjam."' ";
+$sql= "SELECT *FROM peminjam WHERE PEMINJAM_ID='".$id."' ";
 $cek= mysql_query($sql);
 $data = mysql_fetch_array($cek);
 $barang_id = $data['BARANG_ID'];
 $tanggal = $data['TANGGAL_KEMBALI'];
 
-if($data['USER_ID']==$user_id){
+
 	if($tanggal=='0000-00-00 00:00:00'){
-		$update_tanggal = mysql_query("UPDATE peminjam SET TANGGAL_KEMBALI=now() WHERE PEMINJAM_ID='".$id_peminjam."' ")or die(mysql_error());
+		$update_tanggal = mysql_query("UPDATE peminjam SET TANGGAL_KEMBALI=now() WHERE PEMINJAM_ID='".$id."' ")or die(mysql_error());
 		$update_barang = mysql_query("UPDATE barang SET jumlah=1 WHERE BARANG_ID='".$barang_id."' ");
 	
 	//update tabel Recent
@@ -31,15 +26,11 @@ if($data['USER_ID']==$user_id){
 		$row=mysql_fetch_row($tampil);
 		$jenis = $row[8];
 		
-		mysql_query("INSERT INTO recent(PEMINJAM_ID,USER_ID,NAMA,JENIS,TANGGAL_KEMBALI) values( '".$id_peminjam."', '".$user_id."', '".$nama."', '".$jenis."', now() ) ");
+		mysql_query("INSERT INTO recent(PEMINJAM_ID,USER_ID,NAMA,JENIS,TANGGAL_KEMBALI) values( '".$id."', '".$user_id."', '".$nama."', '".$jenis."', now() ) ");
 		
 		header('location:../page/welcome/kembali.php?kembali=sukses');
 	}
 	else{
 		header('location:../page/welcome/kembali.php?kembali=sudah');
 	}
-}
-else{
-
-	header('location:../page/welcome/kembali.php?kembali=gagal');
-}
+?>

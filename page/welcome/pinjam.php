@@ -433,8 +433,8 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 
         <!-- Pop Up 10 -->
         <a href="#x" class="overlay" id="lainnya"></a>
-            <div class="popup">
-            <form class="sign-up" style='width:700px;'>
+            <div class="popup" maxheight="400px" >
+            <form class="sign-up" style='width:700px;max-height:640px;overflow:auto;'>
                 <h1 class="sign-up-title" style='color:#F0776C;'>Barang Lainnya</h1>
                 <table width='100%'>
                     <tr>
@@ -456,8 +456,8 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
         <!-- Akhir Pop Up 10 -->
         <!-- Pop Up semua -->
         <a href="#x" class="overlay" id="semua"></a>
-            <div class="popup" style='height:750px;'>
-            <form class="sign-up" style='width:700px;height:640px;max-height:640px;overflow:auto;'>
+            <div class="popup" maxheight="400px" >
+            <form class="sign-up" style='width:700px;max-height:640px;overflow:auto;'>
                 <h1 class="sign-up-title" style='color:#F0776C;'>Semua Barang</h1>
                 <table width='100%'>
                     <tr>

@@ -118,17 +118,32 @@ if($_SESSION['TIPE']!="admin"){
         <h3 class='pull-right' style='margin:0;margin-right:20px;'> Admin </h3>
       </div>
     </div>
+
+<?php 
+  $id = $_GET['id'];
+  $sql = mysql_query("SELECT *FROM user WHERE USER_ID='".$id."'");
+  $data = mysql_fetch_array($sql);
+  $name = $data['NAMA'];
+  $kelas = $data['KELAS'];
+  $username = $data['USERNAME'];
+  $Password = $data['PASSWORD'];
+  $NIS = $data['NIS'];
+ ?>
+
+
   <hr style='width:500px;border:1px solid #d4d4d4;margin-top:200px;'>
-  <h2 class='text-center' style='color:grey;'> Edit User Atas Nama {{nama}} </h2>
+  <h2 class='text-center' style='color:grey;'> Edit User Atas Nama <font color="blue"> <?php echo $name ?> </font></h2>
   <hr style='width:50px;border:1px solid #d4d4d4;'>
-  <form>
+  
+  <form method="post" action="../../system/edituser.php">
     <center>
     <table width='60%'>
     <tr>
       <td><h3 style='color:grey;margin:0;' class='pull-left'>Nama</h3></td>
       <td>
       <div class="input-group" style='width:100%;'>
-      <input type="text" name="nama" class="form-control" placeholder='Nama' value="">
+      <input type="text" name="nama" class="form-control" placeholder='<?php echo $name; ?>' value="" required>
+      <input type="hidden" name="id" value="<?php echo $id ?>">
       </div>
       </td>
     </tr>
@@ -141,7 +156,7 @@ if($_SESSION['TIPE']!="admin"){
       <td><h3 style='color:grey;margin:0;' class='pull-left'>Kelas</h3></td>
       <td>
       <div class="input-group" style='width:100%;'>
-      <input type="text" name="kelas" class="form-control" placeholder='Kelas' value="">
+      <input type="text" name="kelas" class="form-control" placeholder='<?php echo $kelas ?>' value="" required>
       </div>
       </td>
     </tr>
@@ -154,7 +169,7 @@ if($_SESSION['TIPE']!="admin"){
       <td><h3 style='color:grey;margin:0;' class='pull-left'>Username</h3></td>
       <td>
       <div class="input-group" style='width:100%;'>
-      <input type="text" name="username" class="form-control" placeholder='Username' value="">
+      <input type="text" name="username" class="form-control" placeholder='<?php echo $username ?>' value="" required>
       </div>
       </td>
     </tr>
@@ -167,10 +182,24 @@ if($_SESSION['TIPE']!="admin"){
       <td><h3 style='color:grey;margin:0;' class='pull-left'>Password</h3></td>
       <td>
       <div class="input-group" style='width:100%;'>
-      <input type="password" name="password" class="form-control" placeholder='Password' value="">
+      <input type="password" name="password" class="form-control" placeholder='<?php echo $Password ?>' value="" required>
       </div>
       </td>
     </tr>
+    <tr>
+      <td>
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td><h3 style='color:grey;margin:0;' class='pull-left'>NIS</h3></td>
+      <td>
+      <div class="input-group" style='width:100%;'>
+      <input type="text" name="NIS" class="form-control" placeholder='<?php echo $NIS ?>' value="" required>
+      </div>
+      </td>
+    </tr>
+
     </table>
     </center>
     <br>

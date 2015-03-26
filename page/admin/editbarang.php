@@ -127,14 +127,24 @@ if($_SESSION['TIPE']!="admin"){
   <hr style='width:500px;border:1px solid #d4d4d4;margin-top:200px;'>
   <h2 class='text-center' style='color:grey;'>Edit Barang </h2>
   <hr style='width:50px;border:1px solid #d4d4d4;'>
-  <form>
+  
+  <?php 
+    $id = $_GET['id'];
+    $data = mysql_query("SELECT *FROM barang WHERE BARANG_ID='".$id."'");
+    $row = mysql_fetch_row($data);
+    $merk = $row[2];
+    
+   ?>
+
+  <form action="../../system/editbarang.php" name="editbarang">
     <center>
     <table width='60%'>
     <tr>
-      <td><h3 style='color:grey;margin:0;' class='pull-left'>Nama Barang</h3></td>
+      <td><h3 style='color:grey;margin:0;' class='pull-left'>Merk Barang</h3></td>
       <td>
       <div class="input-group" style='width:100%;'>
-      <input type="text" name="namabarang" class="form-control" placeholder='Nama Barang' value="">
+      <input type="hidden" name="id" value="<?php echo $id; ?>">
+      <input type="text" name="merk" class="form-control" placeholder='<?php echo $merk; ?>'">
       </div>
       </td>
     </tr>
@@ -144,17 +154,19 @@ if($_SESSION['TIPE']!="admin"){
       </td>
     </tr>
     <tr>
-      <td><h3 style='color:grey;margin:0;' class='pull-left'>Merk Barang</h3></td>
+      <td><h3 style='color:grey;margin:0;' class='pull-left'>Kondisi</h3></td>
       <td>
       <div class="input-group" style='width:100%;'>
-      <input type="text" name="merkbarang" class="form-control" placeholder='Merk Barang' value="">
+      <input type="radio" name="kondisi" value="Baik">Baik &nbsp;
+      <input type="radio" name="kondisi" value="Kurang baik">Kurang baik &nbsp;
+      <input type="radio" name="kondisi" value="Rusak">Rusak
       </div>
       </td>
     </tr>
     </table>
     </center>
     <br>
-    <button type='submit' name="submit" class='btn pull-right' style='background:#1BBC9B;color:white;'>Edit</button>
+    <button type='submit'class='btn pull-right' style='background:#1BBC9B;color:white;'>Edit</button>
   </form>
 </div>
 </div>
