@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2015 at 02:49 AM
+-- Generation Time: Mar 26, 2015 at 09:14 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -37,63 +37,28 @@ CREATE TABLE IF NOT EXISTS `barang` (
   `KODE_BARANG` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`BARANG_ID`),
   KEY `FK_RELATIONSHIP_2` (`JENIS_BARANG_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=72 ;
 
 --
 -- Dumping data for table `barang`
 --
 
 INSERT INTO `barang` (`BARANG_ID`, `JENIS_BARANG_ID`, `MERK_BARANG`, `FOTO_BARANG`, `KONDISI`, `TANGGAL_PEMBELIAN`, `JUMLAH`, `KODE_BARANG`) VALUES
-(1, 1, 'Acer', NULL, 'Baik', NULL, 1, '1000'),
-(2, 1, 'Samsung', NULL, 'Kurang baik', NULL, 0, '1001'),
-(3, 1, 'xenom', NULL, 'Baik', NULL, 1, '1002'),
-(4, 2, 'olympic', '', 'Baik', NULL, 1, '2000'),
-(5, 3, 'toshiba', '', 'Baik', NULL, 1, '3000'),
-(6, 4, 'yamaha', '', 'Baik', NULL, 1, '4000'),
-(7, 5, 'apple', '', 'Baik', NULL, 1, '5000'),
-(8, 6, 'iphone', '', 'Baik', NULL, 1, '6000'),
-(9, 6, 'iphone', '', 'Baik', NULL, 1, '6001'),
-(10, 6, 'iphone', '', 'Baik', NULL, 1, '6002'),
-(11, 6, 'iphone', '', 'Baik', NULL, 1, '6003'),
-(12, 6, 'iphone', '', 'Baik', NULL, 1, '6004'),
-(13, 6, 'iphone', '', 'Baik', NULL, 1, '6005'),
-(14, 6, 'iphone', '', 'Baik', NULL, 1, '6006'),
-(15, 6, 'iphone', '', 'Baik', NULL, 1, '6007'),
-(16, 14, 'swis', '', 'Baik', NULL, 1, '14000'),
-(17, 14, 'swis', 'Screenshot_1.png', 'Baik', NULL, 1, '14001'),
-(18, 14, 'swis', NULL, 'Baik', NULL, 1, '14002'),
-(19, 17, 'faber castel', NULL, 'Baik', NULL, 1, '17000'),
-(20, 18, 'adidas', NULL, 'Baik', NULL, 1, '18000'),
-(21, 19, 'Nike', NULL, 'Baik', NULL, 1, '19000'),
-(22, 19, 'Nike', NULL, 'Baik', NULL, 1, '19001'),
-(23, 19, 'Nike', NULL, 'Baik', NULL, 1, '19002'),
-(24, 19, 'Nike', NULL, 'Baik', NULL, 1, '19003'),
-(25, 19, 'Nike', NULL, 'Baik', NULL, 1, '19004'),
-(26, 19, 'Nike', '../page/foto/barang/yadss penempuhan laksana.jpg', 'Baik', NULL, 1, '19005'),
-(27, 25, 'Mangudins', '../page/foto/barang/yadss burangrang rame.jpg', 'Baik', NULL, 1, '25000'),
-(28, 25, 'Mangudins', '../page/foto/barang/yadss burangrang rame.jpg', 'Baik', NULL, 1, '25001'),
-(29, 25, 'Mangudins', '../page/foto/barang/yadss burangrang rame.jpg', 'Baik', NULL, 1, '25002'),
-(33, 1, 'VAIO', NULL, 'Baik', NULL, 1, '1003'),
-(34, 1, 'VAIO', NULL, 'Baik', NULL, 1, '1004'),
-(35, 1, 'VAIO', '../page/foto/barang/Picture2.png', 'Baik', NULL, 1, '1005'),
-(36, 1, 'VAIO', '../page/foto/barang/Picture2.png', 'Baik', NULL, 1, '1006'),
-(37, 28, 'Olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28000'),
-(38, 28, 'olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28001'),
-(39, 28, 'olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28002'),
-(40, 28, 'olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28003'),
-(41, 28, 'Olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28004'),
-(42, 28, 'Olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28005'),
-(43, 28, 'Olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28006'),
-(44, 28, 'Olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28007'),
-(45, 28, 'Olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28008'),
-(46, 28, 'Olympic', '../page/foto/barang/', 'Baik', NULL, 1, '28009'),
-(47, 35, 'Nike', '../page/foto/barang/Screenshot_5.png', 'Baik', NULL, 1, '35000'),
-(48, 36, 'Adidas', '../page/foto/barang/Screenshot_26.png', 'Baik', NULL, 1, '36000'),
-(49, 36, 'Adidas', '../page/foto/barang/Screenshot_26.png', 'Baik', NULL, 1, '36001'),
-(50, 36, 'Adidas', '../page/foto/barang/Screenshot_26.png', 'Baik', NULL, 1, '36002'),
-(51, 39, 'PDL', '../page/foto/barang/Untitled-1.png', 'Baik', NULL, 1, '39000'),
-(52, 39, 'PDL', '../page/foto/barang/Untitled-1.png', 'Baik', NULL, 1, '39001'),
-(53, 41, 'QQ', '../page/foto/barang/1459187_869444979756965_502821816859235038_n.jpg', 'Baik', NULL, 1, '41000');
+(56, 2, 'Olympic', '../page/foto/barang/iykwim.png', 'Baik', NULL, 1, '2000'),
+(58, 1, 'Axoo', '../page/foto/barang/patrick rela.jpg', 'Baik', NULL, 1, '1000'),
+(59, 1, 'Axoo', '../page/foto/barang/patrick rela.jpg', 'Baik', NULL, 1, '1001'),
+(60, 3, 'Swis', '../page/foto/barang/fap fap.png', 'Baik', NULL, 1, '3000'),
+(61, 4, 'Nike', '../page/foto/barang/iykwim.png', 'Baik', NULL, 1, '4000'),
+(62, 4, 'Nike', '../page/foto/barang/iykwim.png', 'Baik', NULL, 1, '4001'),
+(63, 4, 'Nike', '../page/foto/barang/iykwim.png', 'Baik', NULL, 1, '4002'),
+(64, 5, 'Canon', '../page/foto/barang/bahagia itu ya ini.jpg', 'Baik', NULL, 1, '5000'),
+(65, 6, 'Sony', '../page/foto/barang/bacaan-doa-qunut-dan-terjemahannya.jpg', 'Baik', NULL, 1, '6000'),
+(66, 7, 'Olympic', '../page/foto/barang/fap fap.png', 'Baik', NULL, 1, '7000'),
+(67, 7, 'Olympic', '../page/foto/barang/fap fap.png', 'Baik', NULL, 1, '7001'),
+(68, 8, 'BenQ', '../page/foto/barang/patrick rela.jpg', 'Baik', NULL, 1, '8000'),
+(69, 9, 'Adidas', '../page/foto/barang/senpai yamete.jpg', 'Baik', NULL, 1, '9000'),
+(70, 10, 'Iphone', '../page/foto/barang/fap fap.png', 'Baik', NULL, 1, '10000'),
+(71, 10, 'Iphone', '../page/foto/barang/fap fap.png', 'Baik', NULL, 1, '10001');
 
 -- --------------------------------------------------------
 
@@ -107,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `jenis_barang` (
   `STATUS` enum('Bisa','Tidak bisa') NOT NULL,
   PRIMARY KEY (`JENIS_BARANG_ID`),
   UNIQUE KEY `JENIS_BARANG` (`JENIS_BARANG`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Dumping data for table `jenis_barang`
@@ -115,21 +80,15 @@ CREATE TABLE IF NOT EXISTS `jenis_barang` (
 
 INSERT INTO `jenis_barang` (`JENIS_BARANG_ID`, `JENIS_BARANG`, `STATUS`) VALUES
 (1, 'laptop', 'Bisa'),
-(2, 'kursi', 'Bisa'),
-(3, 'handycam', 'Bisa'),
-(4, 'gitar', 'Bisa'),
-(5, 'ipad', 'Bisa'),
-(6, 'handphone', 'Bisa'),
-(14, 'jam', 'Bisa'),
-(17, 'pensil', 'Bisa'),
-(18, 'bola basket', 'Bisa'),
-(19, 'Bola Tenis', 'Bisa'),
-(25, 'Gawang', 'Bisa'),
-(28, 'Meja', 'Tidak bisa'),
-(35, 'Sepatu', 'Bisa'),
-(36, 'Bola volly', 'Bisa'),
-(39, 'Baju', 'Bisa'),
-(41, 'Jam Dinding', 'Tidak bisa');
+(2, 'Kursi', 'Tidak bisa'),
+(3, 'Jam Dinding', 'Tidak bisa'),
+(4, 'Sepatu', 'Bisa'),
+(5, 'Camera DSLR', 'Bisa'),
+(6, 'Camera Movie', 'Bisa'),
+(7, 'Meja', 'Tidak bisa'),
+(8, 'Proyektor', 'Bisa'),
+(9, 'Bola Basket', 'Bisa'),
+(10, 'Handphone', 'Bisa');
 
 -- --------------------------------------------------------
 
@@ -156,7 +115,8 @@ CREATE TABLE IF NOT EXISTS `peminjam` (
   `BARANG_ID` int(11) NOT NULL,
   `TANGGAL_PINJAM` datetime DEFAULT NULL,
   `TANGGAL_KEMBALI` datetime DEFAULT '0000-00-00 00:00:00',
-  `CONFIRM` enum('Ada','Tidak') NOT NULL,
+  `PINJAM` enum('wait','yes','no') DEFAULT NULL,
+  `kembali` enum('wait','yes','no') DEFAULT NULL,
   PRIMARY KEY (`PEMINJAM_ID`),
   KEY `FK_PEMINJAM_BARANG` (`BARANG_ID`),
   KEY `FK_USER_PEMINJAM` (`USER_ID`)
@@ -166,10 +126,8 @@ CREATE TABLE IF NOT EXISTS `peminjam` (
 -- Dumping data for table `peminjam`
 --
 
-INSERT INTO `peminjam` (`PEMINJAM_ID`, `USER_ID`, `BARANG_ID`, `TANGGAL_PINJAM`, `TANGGAL_KEMBALI`, `CONFIRM`) VALUES
-(101, 3, 1, '2015-03-25 10:42:02', '2015-03-25 11:15:50', 'Ada'),
-(103, 3, 2, '2015-03-25 11:45:16', '0000-00-00 00:00:00', 'Ada'),
-(1702, 3, 19, '2015-03-25 11:32:15', '2015-03-25 11:38:45', 'Ada');
+INSERT INTO `peminjam` (`PEMINJAM_ID`, `USER_ID`, `BARANG_ID`, `TANGGAL_PINJAM`, `TANGGAL_KEMBALI`, `PINJAM`, `kembali`) VALUES
+(101, 3, 58, '2015-03-26 14:44:09', '2015-03-26 15:05:45', 'yes', 'yes');
 
 -- --------------------------------------------------------
 
@@ -188,16 +146,15 @@ CREATE TABLE IF NOT EXISTS `recent` (
   PRIMARY KEY (`RECENT_ID`),
   KEY `FK_RECENT_PEMINJAM` (`PEMINJAM_ID`),
   KEY `FK_USER_RECENT` (`USER_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `recent`
 --
 
 INSERT INTO `recent` (`RECENT_ID`, `PEMINJAM_ID`, `USER_ID`, `NAMA`, `JENIS`, `TANGGAL_PINJAM`, `TANGGAL_KEMBALI`) VALUES
-(5, 1702, 3, 'Yadi Muhammad Rojab', '17', '2015-03-25 11:32:15', NULL),
-(6, 1702, 3, 'Yadi Muhammad Rojab', '17', NULL, '2015-03-25 11:38:45'),
-(7, 103, 3, 'Yadi Muhammad Rojab', '1', '2015-03-25 11:45:16', NULL);
+(26, 101, 3, 'Yadi Muhammad Rojab', '1', '2015-03-26 14:46:34', NULL),
+(29, 101, 3, 'Yadi Muhammad Rojab', '1', NULL, '2015-03-26 15:05:45');
 
 -- --------------------------------------------------------
 
@@ -228,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`USER_ID`, `USERNAME`, `PASSWORD`, `TIPE`, `NAMA`, `KELAS`, `JENIS_KELAMIN`, `NIS`, `ALAMAT`, `BANYAK_MEMINJAM`, `FOTO`, `BACKGROUND`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin', 'admin ', 'laki-laki', 0, 'admin@admin', NULL, NULL, NULL),
-(3, 'yadss', 'yadss', 'user', 'Yadi Muhammad Rojab', 'XI RPL B', 'laki-laki', 1314041263, '', 3, 'pramuka jangan galau.jpg', '#1BBC9B');
+(3, 'yadss', 'yadss', 'user', 'Yadi Muhammad Rojab', 'XI RPL B', 'laki-laki', 1314041263, '', 1, 'pramuka jangan galau.jpg', '#1BBC9B');
 
 --
 -- Constraints for dumped tables

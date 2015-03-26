@@ -119,11 +119,10 @@ if($_SESSION['TIPE']!="admin"){
   <hr style='width:500px;border:1px solid #d4d4d4;margin-top:200px;'>
   <h2 class='text-center' style='color:grey;'> Barang yang perlu konfirmasi </h2>
   <hr style='width:50px;border:1px solid #d4d4d4;'>
-  <div class='col-md-4 sedangpinjam'>
-        <h1 class='text-center' style='color:white;'>Nama</h1>
-        <h4 class='text-center'> Meminjam Laptop </h4>
-        <center><a class='btn' style='background:white;color:#333;' name='submit'> Konfirmasi </a> &nbsp; <a class='btn' style='background:#CC4444;color:white;' name='submit'> Tolak </a></center>
-  </div>
+
+<?php konfirm_box(); ?>
+
+  
   </div>
 </div>
 </div>

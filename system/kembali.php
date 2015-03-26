@@ -14,9 +14,10 @@ $tanggal = $data['TANGGAL_KEMBALI'];
 
 	if($tanggal=='0000-00-00 00:00:00'){
 		$update_tanggal = mysql_query("UPDATE peminjam SET TANGGAL_KEMBALI=now() WHERE PEMINJAM_ID='".$id."' ")or die(mysql_error());
-		$update_barang = mysql_query("UPDATE barang SET jumlah=1 WHERE BARANG_ID='".$barang_id."' ");
+		$update_tanggal = mysql_query("UPDATE peminjam SET kembali='wait' WHERE PEMINJAM_ID='".$id."' ")or die(mysql_error());
+//		$update_barang = mysql_query("UPDATE barang SET jumlah=1 WHERE BARANG_ID='".$barang_id."' ");
 	
-	//update tabel Recent
+/*	//update tabel Recent
 		$sql_user = mysql_query("SELECT * FROM user WHERE USER_ID = '".$user_id."' ");
 		$data_user = mysql_fetch_array($sql_user);
 		$nama = $data_user['NAMA'];
@@ -27,10 +28,10 @@ $tanggal = $data['TANGGAL_KEMBALI'];
 		$jenis = $row[8];
 		
 		mysql_query("INSERT INTO recent(PEMINJAM_ID,USER_ID,NAMA,JENIS,TANGGAL_KEMBALI) values( '".$id."', '".$user_id."', '".$nama."', '".$jenis."', now() ) ");
-		
-		header('location:../page/welcome/kembali.php?kembali=sukses');
+*/		
+//		header('location:../page/welcome/kembali.php?kembali=sukses');
 	}
 	else{
-		header('location:../page/welcome/kembali.php?kembali=sudah');
+//		header('location:../page/welcome/kembali.php?kembali=sudah');
 	}
 ?>

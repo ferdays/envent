@@ -27,6 +27,59 @@ function jumlah_lain(){
 	
 }
 
+function konfirm_box(){
+
+	$sql = mysql_query("SELECT *FROM peminjam WHERE PINJAM='wait'");
+while($row=mysql_fetch_row($sql)){
+$sql_nama = mysql_query("SELECT *FROM user WHERE USER_ID=$row[1]");
+$data_nama = mysql_fetch_array($sql_nama);
+$nama = $data_nama['USERNAME'];
+
+$sql_merk = mysql_query("SELECT *FROM barang WHERE BARANG_ID=$row[2] ");
+$data_merk = mysql_fetch_array($sql_merk);
+$merk = $data_merk['MERK_BARANG'];
+
+$jenis_barang_id = $data_merk['JENIS_BARANG_ID'];
+$sql_jenis = mysql_query("SELECT *FROM jenis_barang WHERE JENIS_BARANG_ID=$jenis_barang_id ");
+$data_jenis = mysql_fetch_array($sql_jenis);
+$jenis = $data_jenis['JENIS_BARANG'];
+
+echo "	
+		<div class='col-md-4 sedangpinjam'>
+        	<h1 class='text-center' style='color:white;'>$nama</h1>
+        	<h4 class='text-center'> Meminjam $jenis $merk dengan id $row[2]</h4>
+        	<center><a href='../../system/konfirm_pinjam.php?id=$row[0]' class='btn' style='background:white;color:#333;' name='submit'> Konfirmasi </a> &nbsp; <a class='btn' style='background:#CC4444;color:white;' name='submit'> Tolak </a></center>
+  		</div>
+  	";
+}
+
+
+	$sql = mysql_query("SELECT *FROM peminjam WHERE kembali='wait'");
+while($row=mysql_fetch_row($sql)){
+$sql_nama = mysql_query("SELECT *FROM user WHERE USER_ID=$row[1]");
+$data_nama = mysql_fetch_array($sql_nama);
+$nama = $data_nama['USERNAME'];
+
+$sql_merk = mysql_query("SELECT *FROM barang WHERE BARANG_ID=$row[2] ");
+$data_merk = mysql_fetch_array($sql_merk);
+$merk = $data_merk['MERK_BARANG'];
+
+$jenis_barang_id = $data_merk['JENIS_BARANG_ID'];
+$sql_jenis = mysql_query("SELECT *FROM jenis_barang WHERE JENIS_BARANG_ID=$jenis_barang_id ");
+$data_jenis = mysql_fetch_array($sql_jenis);
+$jenis = $data_jenis['JENIS_BARANG'];
+
+echo "	
+		<div class='col-md-4 sedangpinjam'>
+        	<h1 class='text-center' style='color:white;'>$nama</h1>
+        	<h4 class='text-center'> Mengembalikan $jenis $merk dengan id $row[2]</h4>
+        	<center><a href='../../system/konfirm_kembali.php?id=$row[0]' class='btn' style='background:white;color:#333;' name='submit'> Konfirmasi </a> &nbsp; <a class='btn' style='background:#CC4444;color:white;' name='submit'> Tolak </a></center>
+  		</div>
+  	";
+}
+
+}
+
 // Fungsi Tampil User
 
 
@@ -225,6 +278,7 @@ if($row[10]=='Bisa'){
 }
 }
 function recent_activites(){
+
 	$peminjam_list = mysql_query("SELECT *FROM recent");
 	while($row=mysql_fetch_row($peminjam_list)){
 	//data USER_ID dari table Peminjam
@@ -260,6 +314,8 @@ function recent_activites(){
 		}
 
 	}	 
+
+
 }
 
 function Aktivitas(){

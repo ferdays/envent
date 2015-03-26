@@ -495,7 +495,7 @@ if(!empty($_GET['pinjam']))
             echo "<div id='suksespinjam'>
                     <h4 style='margin:5px;'>Pemberitahuan <a href='pinjam.php' class='pull-right'>X</a></h4>
                     <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
-                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Anda berhasil meminjam barang, Dapatkan bukti peminjaman <a href='kembali.php'> Disini </a> </p>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Anda berhasil meminjam barang, tunjukan bukti peminjaman yang tersedia <a href='kembali.php'> Disini </a> untuk mengambil barang di ruang inventori </p>
                 </div>";
         }
         else

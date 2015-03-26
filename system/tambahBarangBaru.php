@@ -40,7 +40,11 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-	$tambah_jenis = mysql_query("INSERT INTO jenis_barang(JENIS_BARANG, STATUS) VALUES('".$name."','".$status."')");
+
+    $jml_jenis = mysql_num_rows(mysql_query("SELECT *FROM jenis_barang"));
+    $id_jenis = $jml_jenis + 1;
+
+	$tambah_jenis = mysql_query("INSERT INTO jenis_barang(JENIS_BARANG_ID,JENIS_BARANG, STATUS) VALUES('".$id_jenis."','".$name."','".$status."')");
 
 	$sql = mysql_query("SELECT *FROM jenis_barang WHERE JENIS_BARANG = '".$name."' ");
 	$data = mysql_fetch_array($sql);
@@ -56,5 +60,5 @@ $kode_barang = "".$jenis_data."00".$jumlah_jenis."";
 	$tambah_barang = mysql_query("INSERT INTO barang(JENIS_BARANG_ID, MERK_BARANG, KONDISI, KODE_BARANG, FOTO_BARANG) VALUES( '".$jenis_data."', '".$merk."', 'BAIK', '".$kode_barang."', '".$target_file."' ) ");
 
 }
-//header('location:../page/admin/index.php?tambah=1')
+header('location:../page/admin/index.php?tambah=1')
 ?>
