@@ -34,24 +34,6 @@ if($sql){
 
 	//Update Tabel Peminjam
 		$insert_pinjam = mysql_query("INSERT INTO peminjam(PEMINJAM_ID,USER_ID,BARANG_ID,TANGGAL_PINJAM) values('".$id_peminjam."', '".$user_id."', '".$id_brg."', now() ) ");
-		$sql = mysql_query("SELECT *FROM user WHERE USER_ID='".$user_id."' ");
-		$data_user = mysql_fetch_array($sql);
-		$nama = $data_user['NAMA'];
-
-		require_once("../../dompdf/dompdf_config.inc.php");
-		$html =
-		  '<html><body>'.
-		  '<h3>Halo, '.$nama.' berikut bukti peminjam Anda : </h3>'.
-		  '<p>Alamat lengkap Anda adalah : '.$user_id.'</p>'.
-		  '</body></html>';
-
-		$dompdf = new DOMPDF();
-		$dompdf->load_html($html);
-		$dompdf->render();
-		$dompdf->stream('bukti_peminjaman_'.$nama.'.pdf');
-		if ($dompdf) {
-		header('location:../page/welcome/pinjam.php?pinjam=sukses');
-		}
 		//echo $jumlah_pinjam_brg;
 
 	//update tabel Recent

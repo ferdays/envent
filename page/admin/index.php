@@ -85,6 +85,12 @@ if($_SESSION['TIPE']!="admin"){
       </center>
     </div>
     </a>
+    <a href="pemberitahuan.php"><div class='col-md-12 lain' style='border-bottom:1px solid grey;'>
+      <center><h2 class='glyphicon glyphicon-grain' style='color:#15c1df;'></h2>
+      <h4> Pemberitahuan </h4>
+      </center>
+    </div>
+    </a>
     <a href="traffic.php"><div class='col-md-12 lain' style='border-bottom:1px solid grey;'>
       <center><h2 class='glyphicon glyphicon-transfer' style='color:#15c1df;'></h2>
       <h4> Traffic </h4>

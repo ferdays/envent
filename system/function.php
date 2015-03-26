@@ -54,10 +54,12 @@ $nama = $data_nama['JENIS_BARANG'];
 				<input type='hidden' name='nama' value='$nama'><h1 class='text-center' style='color:white;'>$nama</h1>
 				<input type='hidden' name='merk' value='$merk'><h4 class='text-center' style='color:white;'>$merk</h4>
 				<input type='hidden' name='id' value='$row[0]'><h6 class='text-center' style='color:white;'>ID : $row[0]</h6>
-				<center><input type='submit' class='btn' style='background:white;color:#333;' name='submit' value='Kembalikan'></center>
+				<center><input type='submit' class='btn' style='background:white;color:#333;' name='submit' value='Kembalikan'>&nbsp;"; ?> 
+				<a href="javascript:void(0);"
+    			onclick="window.open('../../report.php?id=<?php echo $row[0]; ?>','nama_window_pop_up','size=800,height=800,scrollbars=yes,resizeable=no')" style='background:white;color:#333;' class='btn'> Lihat Bukti </a></center>
 			</form>
 			</div>
-	";
+			<?php
 	}
 }
 }
