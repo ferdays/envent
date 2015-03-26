@@ -257,7 +257,7 @@ if(!empty($_GET['tambah']))
             echo "<div id='suksespinjam' style='background:red;top:100px;'>
                     <h4 style='margin:5px;'>Pemberitahuan <a href='user.php' class='pull-right'>X</a></h4>
                     <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
-                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Gagal menambah barang </p>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Gagal menambah data </p>
                 </div>";
         }
 }
