@@ -512,12 +512,24 @@ if(!empty($_GET['pinjam']))
                     <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Anda berhasil meminjam barang, tunjukan bukti peminjaman yang tersedia <a href='kembali.php'> Disini </a> untuk mengambil barang di ruang inventori </p>
                 </div>";
         }
+        else if($_GET['pinjam'] == 'tidak')
+        {
+            $tampil = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID WHERE brg.BARANG_ID='".$id_brg."' ");
+            echo "<div id='suksespinjam' style='background:red;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='pinjam.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Maaf! Barang ini merupakan inventaris yang tidak bisa di pinjam oleh user.</p>
+                </div>";
+        }
         else
         {
-            echo "<script language=\"Javascript\">\n";
-            echo "window.alert('Maaf Anda gagal!');";
-            echo "</script>";
-        }
+           echo "<div id='suksespinjam' style='background:red;'>
+                    <h4 style='margin:5px;'>Pemberitahuan <a href='kembali.php' class='pull-right'>X</a></h4>
+                    <hr style='width:90%;margin-left:5px;margin-top:-2px;' class='pull-left'>
+                    <p style='margin-top:-10px;margin-left:5px;display:inline-block;font-size:15px;'>Gagal meminjam Barang!</p>
+                </div>";
+        
+         }
 }
 ?>      
 

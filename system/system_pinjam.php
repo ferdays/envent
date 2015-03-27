@@ -7,13 +7,14 @@ $user_id = $_SESSION['USER_ID'];
 $id_brg = $_GET['id'];
 
 //cek + update tabel Barang
-$sql = mysql_query("SELECT * FROM barang WHERE BARANG_ID = '".$id_brg."' ");
-$data = mysql_fetch_array($sql);
+$sql = mysql_query("SELECT *FROM barang as brg JOIN jenis_barang as jns ON brg.JENIS_BARANG_ID=jns.JENIS_BARANG_ID WHERE brg.BARANG_ID='".$id_brg."' ")or die(mysql_error());
+$data = mysql_fetch_row($sql);
+
 
 if($sql){
 
-	if($data['JUMLAH']==1){
-		
+	if($data[6]==1){
+if($DATA[10]=='Bisa'){		
 	
 	
 
@@ -37,8 +38,12 @@ if($sql){
 		header('location:../page/welcome/pinjam.php?pinjam=sukses');
 		
 
-		}
 
+		}
+else{
+		header('location:../page/welcome/pinjam.php?pinjam=tidak');
+}
+}
 }
 else{
 	header('location:../page/welcome/pinjam.php?pinjam=gagal');
