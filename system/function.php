@@ -458,6 +458,12 @@ function nama_brg($number) {
     $tampil = mysql_fetch_array($sql);
     echo $tampil['JENIS_BARANG'];
 }
+function tampil_nama_brg($number) {
+    $sql = mysql_query("SELECT JENIS_BARANG FROM jenis_barang WHERE JENIS_BARANG_ID='".$number."' ");
+    $tampil = mysql_fetch_array($sql);
+    echo substr($tampil['JENIS_BARANG'],0,6);
+    echo '...';
+}
 function item(){
 	$total = mysql_query("SELECT SUM(JUMLAH) AS total_item FROM barang");
 	$hasil = mysql_fetch_array($total);

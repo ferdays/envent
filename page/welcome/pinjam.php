@@ -123,83 +123,94 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 		</a>
 
 		<div class='col-md-12'>
+
 			<center><h1>Pinjam Barang</h1></center>
 			<hr style='width:100px;border:1px solid #d4d4d4;'>
 			<h3 style='color:#333;'> Barang yang tersedia saat ini</h3>
 			<hr style='width:300px;border:1px solid #d4d4d4;margin-top:-2px;' class='pull-left'>
 			<br>
-			<a href="#<?php nama_brg(1); ?>" id="login_pop">
+			                         
+            <a href="#<?php nama_brg(1); ?>" id="login_pop">
 			<div class='col-md-3' style='background:#1BBC9B;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(1) ?></h1>
-					<h3><?php nama_brg(1); ?></h3>
+					<h3><?php tampil_nama_brg(1); ?></h3>
 				</center>
 			</div>
 			</a>
+
         	<a href="#<?php nama_brg(2); ?>" id="login_pop">
 			<div class='col-md-7' style='background:#4390DF;'>
 				<center>
 					<h1 style='color:white;'><?php jumlah(2) ?></h1>
-					<h3><?php nama_brg(2); ?></h3>
+					<h3><?php tampil_nama_brg(2); ?></h3>
 				</center>
 			</div>
 			</a>
-        	<a href="#<?php nama_brg(3); ?>" id="login_pop">
-			<div class='col-md-2' style='background:#e67e22;'>
-				<center>
-					<h1 style='color:white;'><?php jumlah(3) ?></h1>
-					<h3><?php nama_brg(3); ?></h3>
-				</center>
-			</div>
-			</a>
-			<a href="#<?php nama_brg(4); ?>" id="login_pop">
-			<div class='col-md-7' style='background:#9b59b6;'>
-				<center>
-					<h1 style='color:white;'><?php jumlah(4) ?></h1>
-					<h3><?php nama_brg(4); ?></h3>
-				</center>
-			</div>
-			</a>
-			<a href="#<?php nama_brg(5); ?>" id="login_pop">
-			<div class='col-md-2' style='background:#e74c3c;'>
-				<center>
-					<h1 style='color:white;'><?php jumlah(5) ?></h1>
-					<h3><?php nama_brg(5); ?></h3>
-				</center>
-			</div>
-			</a>
-			<a href="#<?php nama_brg(6); ?>" id="login_pop">
-			<div class='col-md-3' style='background:#1BBC9B;'>
-				<center>
-					<h1 style='color:white;'><?php jumlah(6) ?></h1>
-					<h3><?php nama_brg(6); ?></h3>
-    				</center>
-			</div>
-			</a>
-			<a href="#<?php nama_brg(7); ?>" id="login_pop">
-			<div class='col-md-2' style='background:#4390DF;'>
-				<center>
-					<h1 style='color:white;'><?php jumlah(7) ?></h1>
-					<h3><?php nama_brg(7); ?></h3>
-				</center>
-			</div>
-			</a>
-			<a href="#<?php nama_brg(8); ?>" id="login_pop">
-			<div class='col-md-3' style='background:#e67e22;'>
-				<center>
-					<h1 style='color:white;'><?php jumlah(8) ?></h1>
-					<h3><?php nama_brg(8); ?></h3>
-				</center>
-			</div>
-			</a>
-			<a href="#<?php nama_brg(9); ?>" id="login_pop">
-			<div class='col-md-4' style='background:#2F74A3;'>
-				<center>
-					<h1 style='color:white;'><?php jumlah(9) ?></h1>
-					<h3><?php nama_brg(9); ?></h3>
-				</center>
-			</div>
-			</a>
+
+            <a href="#<?php nama_brg(3); ?>" id="login_pop">
+            <div class='col-md-2' style='background:#e67e22;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(3) ?></h1>
+                    <h3><?php tampil_nama_brg(3); ?></h3>
+                </center>
+            </div>
+            </a>
+
+            <a href="#<?php nama_brg(4); ?>" id="login_pop">
+            <div class='col-md-7' style='background:#9b59b6;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(4) ?></h1>
+                    <h3><?php tampil_nama_brg(4); ?></h3>
+                </center>
+            </div>
+            </a>
+
+            <a href="#<?php nama_brg(5); ?>" id="login_pop">
+            <div class='col-md-2' style='background:#e74c3c;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(5) ?></h1>
+                    <h3><?php tampil_nama_brg(5); ?></h3>
+                </center>
+            </div>
+            </a>
+
+            <a href="#<?php nama_brg(6); ?>" id="login_pop">
+            <div class='col-md-3' style='background:#1BBC9B;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(6) ?></h1>
+                    <h3><?php tampil_nama_brg(6); ?></h3>
+                    </center>
+            </div>
+            </a>
+
+            <a href="#<?php nama_brg(7); ?>" id="login_pop">
+            <div class='col-md-2' style='background:#4390DF;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(7) ?></h1>
+                    <h3><?php tampil_nama_brg(7); ?></h3>
+                </center>
+            </div>
+            </a>
+
+            <a href="#<?php nama_brg(8); ?>" id="login_pop">
+            <div class='col-md-3' style='background:#e67e22;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(8) ?></h1>
+                    <h3><?php tampil_nama_brg(8); ?></h3>
+                </center>
+            </div>
+            </a>
+
+            <a href="#<?php nama_brg(9); ?>" id="login_pop">
+            <div class='col-md-4' style='background:#2F74A3;'>
+                <center>
+                    <h1 style='color:white;'><?php jumlah(9) ?></h1>
+                    <h3><?php tampil_nama_brg(9); ?></h3>
+                </center>
+            </div>
+            </a>
+
             <a href="#lainnya" id="login_pop">
             <div class='col-md-3' style='background:#4390DF;'>
                 <center>
@@ -208,10 +219,13 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
                 </center>
             </div>
             </a>
-			<center><img src="../../img/thumb-footer.png" height='50' style='margin-top:50px;'>
+
+        	<center><img src="../../img/thumb-footer.png" height='50' style='margin-top:50px;'>
 			<h5 style='color:#333;'>Made with love by Cowoteam</h5>
-			</center>
-		</div>
+			
+            </center>
+		
+        </div>
 
 		<!-- Pop Up -->
 
